@@ -1,109 +1,109 @@
 /*
- * ���̃\�[�X�R�[�h�� blanco Framework�ɂ�莩����������܂����B
+ * このソースコードは blanco Frameworkにより自動生成されました。
  */
 package blanco.xml.bind.valueobject;
 
 /**
- * SAX�C�x���g�̂��� DTD���L�����܂��B���̃N���X�� XML/�o�����[�I�u�W�F�N�g�}�b�s���O (X/O�}�b�s���O) blancoXmlBinding �̈ꕔ�ł��B
+ * SAXイベントのうち DTDを記憶します。このクラスは XML/バリューオブジェクトマッピング (X/Oマッピング) blancoXmlBinding の一部です。
  */
 public class BlancoXmlDtd extends BlancoXmlNode {
     /**
-     * �\�L�@���B
+     * 表記法名。
      *
-     * �t�B�[���h: [name]�B
+     * フィールド: [name]。
      */
     private String fName;
 
     /**
-     * �\�L�@�̌��J���ʎq�B
+     * 表記法の公開識別子。
      *
-     * �t�B�[���h: [publicId]�B
+     * フィールド: [publicId]。
      */
     private String fPublicId;
 
     /**
-     * �\�L�@�̃V�X�e�����ʎq�B
+     * 表記法のシステム識別子。
      *
-     * �t�B�[���h: [systemId]�B
+     * フィールド: [systemId]。
      */
     private String fSystemId;
 
     /**
-     * �t�B�[���h [name] �̒l��ݒ肵�܂��B
+     * フィールド [name] の値を設定します。
      *
-     * �t�B�[���h�̐���: [�\�L�@���B]�B
+     * フィールドの説明: [表記法名。]。
      *
-     * @param argName �t�B�[���h[name]�ɐݒ肷��l�B
+     * @param argName フィールド[name]に設定する値。
      */
     public void setName(final String argName) {
         fName = argName;
     }
 
     /**
-     * �t�B�[���h [name] �̒l���擾���܂��B
+     * フィールド [name] の値を取得します。
      *
-     * �t�B�[���h�̐���: [�\�L�@���B]�B
+     * フィールドの説明: [表記法名。]。
      *
-     * @return �t�B�[���h[name]����擾�����l�B
+     * @return フィールド[name]から取得した値。
      */
     public String getName() {
         return fName;
     }
 
     /**
-     * �t�B�[���h [publicId] �̒l��ݒ肵�܂��B
+     * フィールド [publicId] の値を設定します。
      *
-     * �t�B�[���h�̐���: [�\�L�@�̌��J���ʎq�B]�B
+     * フィールドの説明: [表記法の公開識別子。]。
      *
-     * @param argPublicId �t�B�[���h[publicId]�ɐݒ肷��l�B
+     * @param argPublicId フィールド[publicId]に設定する値。
      */
     public void setPublicId(final String argPublicId) {
         fPublicId = argPublicId;
     }
 
     /**
-     * �t�B�[���h [publicId] �̒l���擾���܂��B
+     * フィールド [publicId] の値を取得します。
      *
-     * �t�B�[���h�̐���: [�\�L�@�̌��J���ʎq�B]�B
+     * フィールドの説明: [表記法の公開識別子。]。
      *
-     * @return �t�B�[���h[publicId]����擾�����l�B
+     * @return フィールド[publicId]から取得した値。
      */
     public String getPublicId() {
         return fPublicId;
     }
 
     /**
-     * �t�B�[���h [systemId] �̒l��ݒ肵�܂��B
+     * フィールド [systemId] の値を設定します。
      *
-     * �t�B�[���h�̐���: [�\�L�@�̃V�X�e�����ʎq�B]�B
+     * フィールドの説明: [表記法のシステム識別子。]。
      *
-     * @param argSystemId �t�B�[���h[systemId]�ɐݒ肷��l�B
+     * @param argSystemId フィールド[systemId]に設定する値。
      */
     public void setSystemId(final String argSystemId) {
         fSystemId = argSystemId;
     }
 
     /**
-     * �t�B�[���h [systemId] �̒l���擾���܂��B
+     * フィールド [systemId] の値を取得します。
      *
-     * �t�B�[���h�̐���: [�\�L�@�̃V�X�e�����ʎq�B]�B
+     * フィールドの説明: [表記法のシステム識別子。]。
      *
-     * @return �t�B�[���h[systemId]����擾�����l�B
+     * @return フィールド[systemId]から取得した値。
      */
     public String getSystemId() {
         return fSystemId;
     }
 
     /**
-     * ���̃o�����[�I�u�W�F�N�g�̕�����\�����擾���܂��B
+     * このバリューオブジェクトの文字列表現を取得します。
      *
-     * <P>�g�p��̒���</P>
+     * <P>使用上の注意</P>
      * <UL>
-     * <LI>�I�u�W�F�N�g�̃V�����[�͈͂̂ݕ����񉻂̏����ΏۂƂȂ�܂��B
-     * <LI>�I�u�W�F�N�g���z�Q�Ƃ��Ă���ꍇ�ɂ́A���̃��\�b�h�͎g��Ȃ��ł��������B
+     * <LI>オブジェクトのシャロー範囲のみ文字列化の処理対象となります。
+     * <LI>オブジェクトが循環参照している場合には、このメソッドは使わないでください。
      * </UL>
      *
-     * @return �o�����[�I�u�W�F�N�g�̕�����\���B
+     * @return バリューオブジェクトの文字列表現。
      */
     @Override
     public String toString() {

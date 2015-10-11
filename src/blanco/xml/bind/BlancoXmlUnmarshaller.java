@@ -41,35 +41,35 @@ import org.xml.sax.helpers.XMLReaderFactory;
 import blanco.xml.bind.valueobject.BlancoXmlDocument;
 
 /**
- * XML ‚©‚ç blancoXmlBinding ƒoƒŠƒ…[ƒIƒuƒWƒFƒNƒg•\Œ»‚ğ¶¬‚·‚é‚½‚ß‚ÌƒNƒ‰ƒX‚Å‚·B
+ * XML ã‹ã‚‰ blancoXmlBinding ãƒãƒªãƒ¥ãƒ¼ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆè¡¨ç¾ã‚’ç”Ÿæˆã™ã‚‹ãŸã‚ã®ã‚¯ãƒ©ã‚¹ã§ã™ã€‚
  * 
- * ‚±‚ÌƒNƒ‰ƒX‚Í XML/ƒoƒŠƒ…[ƒIƒuƒWƒFƒNƒgƒ}ƒbƒsƒ“ƒO (X/Oƒ}ƒbƒsƒ“ƒO) blancoXmlBinding ‚Ìˆê•”‚Å‚·B
+ * ã“ã®ã‚¯ãƒ©ã‚¹ã¯ XML/ãƒãƒªãƒ¥ãƒ¼ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãƒãƒƒãƒ”ãƒ³ã‚° (X/Oãƒãƒƒãƒ”ãƒ³ã‚°) blancoXmlBinding ã®ä¸€éƒ¨ã§ã™ã€‚
  * 
  * @author IGA Tosiki
  */
 public class BlancoXmlUnmarshaller {
     /**
-     * XML‚©‚çJavaƒIƒuƒWƒFƒNƒg‚ğ¶¬‚µ‚Ü‚·B
+     * XMLã‹ã‚‰Javaã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ç”Ÿæˆã—ã¾ã™ã€‚
      * 
-     * Ql: http://java.sun.com/webservices/docs/1.6/api/javax/xml/bind/
+     * å‚è€ƒ: http://java.sun.com/webservices/docs/1.6/api/javax/xml/bind/
      * Unmarshaller.html
      * 
      * @param fileInput
-     *            XMLƒtƒ@ƒCƒ‹B
-     * @return blancoXml‚Æ‚µ‚Ä‚ÌƒIƒuƒWƒFƒNƒgB
+     *            XMLãƒ•ã‚¡ã‚¤ãƒ«ã€‚
+     * @return blancoXmlã¨ã—ã¦ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã€‚
      */
     public BlancoXmlDocument unmarshal(final File fileInput) {
         if (fileInput.exists() == false) {
-            throw new IllegalArgumentException("ƒtƒ@ƒCƒ‹["
-                    + fileInput.getAbsolutePath() + "]‚ÍŒ©‚Â‚©‚è‚Ü‚¹‚ñB");
+            throw new IllegalArgumentException("ãƒ•ã‚¡ã‚¤ãƒ«["
+                    + fileInput.getAbsolutePath() + "]ã¯è¦‹ã¤ã‹ã‚Šã¾ã›ã‚“ã€‚");
         }
         if (fileInput.isDirectory()) {
-            throw new IllegalArgumentException("ƒtƒ@ƒCƒ‹["
-                    + fileInput.getAbsolutePath() + "]‚ÍÀÛ‚É‚ÍƒfƒBƒŒƒNƒgƒŠ‚Å‚·B");
+            throw new IllegalArgumentException("ãƒ•ã‚¡ã‚¤ãƒ«["
+                    + fileInput.getAbsolutePath() + "]ã¯å®Ÿéš›ã«ã¯ãƒ‡ã‚£ãƒ¬ã‚¯ãƒˆãƒªã§ã™ã€‚");
         }
         if (fileInput.canRead() == false) {
-            throw new IllegalArgumentException("ƒtƒ@ƒCƒ‹["
-                    + fileInput.getAbsolutePath() + "]‚Í“Ç‚İ‚Ş‚±‚Æ‚ª‚Å‚«‚Ü‚¹‚ñB");
+            throw new IllegalArgumentException("ãƒ•ã‚¡ã‚¤ãƒ«["
+                    + fileInput.getAbsolutePath() + "]ã¯èª­ã¿è¾¼ã‚€ã“ã¨ãŒã§ãã¾ã›ã‚“ã€‚");
         }
 
         InputStream inStream = null;
@@ -79,7 +79,7 @@ public class BlancoXmlUnmarshaller {
 
             return unmarshal(inStream);
         } catch (IOException e) {
-            throw new IllegalArgumentException("ˆ—’†‚É“üo—Í—áŠO‚ª”­¶‚µ‚Ü‚µ‚½B: "
+            throw new IllegalArgumentException("å‡¦ç†ä¸­ã«å…¥å‡ºåŠ›ä¾‹å¤–ãŒç™ºç”Ÿã—ã¾ã—ãŸã€‚: "
                     + e.toString(), e);
         } finally {
             if (inStream != null) {
@@ -87,44 +87,44 @@ public class BlancoXmlUnmarshaller {
                     inStream.close();
                 } catch (IOException e) {
                     throw new IllegalArgumentException(
-                            "“ü—ÍƒXƒgƒŠ[ƒ€‚ÌƒNƒ[ƒYˆ—’†‚É“üo—Í—áŠO‚ª”­¶‚µ‚Ü‚µ‚½B: " + e.toString(), e);
+                            "å…¥åŠ›ã‚¹ãƒˆãƒªãƒ¼ãƒ ã®ã‚¯ãƒ­ãƒ¼ã‚ºå‡¦ç†ä¸­ã«å…¥å‡ºåŠ›ä¾‹å¤–ãŒç™ºç”Ÿã—ã¾ã—ãŸã€‚: " + e.toString(), e);
                 }
             }
         }
     }
 
     /**
-     * XML‚©‚çJavaƒIƒuƒWƒFƒNƒg‚ğ¶¬‚µ‚Ü‚·B
+     * XMLã‹ã‚‰Javaã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’ç”Ÿæˆã—ã¾ã™ã€‚
      * 
-     * Ql: http://java.sun.com/webservices/docs/1.6/api/javax/xml/bind/
+     * å‚è€ƒ: http://java.sun.com/webservices/docs/1.6/api/javax/xml/bind/
      * Unmarshaller.html
      * 
      * @param inStream
-     *            XML“ü—ÍƒXƒgƒŠ[ƒ€B
-     * @return blancoXml‚Æ‚µ‚Ä‚ÌƒIƒuƒWƒFƒNƒgB
+     *            XMLå…¥åŠ›ã‚¹ãƒˆãƒªãƒ¼ãƒ ã€‚
+     * @return blancoXmlã¨ã—ã¦ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã€‚
      */
     public BlancoXmlDocument unmarshal(final InputStream inStream) {
         if (inStream == null) {
             throw new IllegalArgumentException(
-                    "BlancoXmlUnmarshaller#unmarshal: “ü—ÍƒXƒgƒŠ[ƒ€‚É null ‚ª—^‚¦‚ç‚ê‚Ü‚µ‚½B");
+                    "BlancoXmlUnmarshaller#unmarshal: å…¥åŠ›ã‚¹ãƒˆãƒªãƒ¼ãƒ ã« null ãŒä¸ãˆã‚‰ã‚Œã¾ã—ãŸã€‚");
         }
 
         final BlancoXmlUnmarshallerContentHandler handler = new BlancoXmlUnmarshallerContentHandler();
 
         try {
-            // XMLƒp[ƒT‚Ìİ’è‚ğƒRƒ“ƒgƒ[ƒ‹‚µ‚½‚¢‚Ì‚ÅAXMLReader‚ğ—Dæ‚µ‚Ä—˜—pB
+            // XMLãƒ‘ãƒ¼ã‚µã®è¨­å®šã‚’ã‚³ãƒ³ãƒˆãƒ­ãƒ¼ãƒ«ã—ãŸã„ã®ã§ã€XMLReaderã‚’å„ªå…ˆã—ã¦åˆ©ç”¨ã€‚
             XMLReader reader = null;
             try {
                 reader = XMLReaderFactory.createXMLReader();
             } catch (SAXException e) {
                 Logger.getLogger("blanco.xml.bind").fine(
-                        "XMLReader ‚Ìæ“¾‚É¸”s‚µ‚Ü‚µ‚½: " + e.toString());
+                        "XMLReader ã®å–å¾—ã«å¤±æ•—ã—ã¾ã—ãŸ: " + e.toString());
 
-                // ŠÂ‹«‚É‚æ‚Á‚Ä‚Í(JDK 1.4.2‚Å‹H‚É?) XMLReader‚Ìæ“¾‚É¸”s‚·‚éê‡‚ª‚ ‚è‚Ü‚·B
+                // ç’°å¢ƒã«ã‚ˆã£ã¦ã¯(JDK 1.4.2ã§ç¨€ã«?) XMLReaderã®å–å¾—ã«å¤±æ•—ã™ã‚‹å ´åˆãŒã‚ã‚Šã¾ã™ã€‚
 
-                // XMLReaderFactory.createXMLReader() ŒÄ‚Ño‚µ‚ÉA
+                // XMLReaderFactory.createXMLReader() å‘¼ã³å‡ºã—æ™‚ã«ã€
                 // org.xml.sax.SAXException: System property org.xml.sax.driver
-                // not specified ‚ª”­¶‚·‚é‚±‚Æ‚ªŠm”F‚³‚ê‚Ä‚¢‚Ü‚·B
+                // not specified ãŒç™ºç”Ÿã™ã‚‹ã“ã¨ãŒç¢ºèªã•ã‚Œã¦ã„ã¾ã™ã€‚
                 final SAXResult result = new SAXResult(handler);
                 result.setHandler(handler);
                 result.setLexicalHandler(handler);
@@ -135,33 +135,33 @@ public class BlancoXmlUnmarshaller {
                     return handler.getDocument();
 
                 } catch (TransformerException e2) {
-                    throw new IllegalArgumentException("ˆ—’†‚É XML ‰ğÍ—áŠO‚ª”­¶‚µ‚Ü‚µ‚½B"
+                    throw new IllegalArgumentException("å‡¦ç†ä¸­ã« XML è§£æä¾‹å¤–ãŒç™ºç”Ÿã—ã¾ã—ãŸã€‚"
                             + e2.toString(), e2);
                 }
             }
 
-            // XMLReader‚ğ–³–‚Éæ“¾‚Å‚«‚½ê‡‚É‚ÍA‚±‚¿‚ç‚ğ’Ê‚è‚Ü‚·B
+            // XMLReaderã‚’ç„¡äº‹ã«å–å¾—ã§ããŸå ´åˆã«ã¯ã€ã“ã¡ã‚‰ã‚’é€šã‚Šã¾ã™ã€‚
 
             try {
-                // ŠO•”‚ÌDTD‚ğ“Ç‚İ‚Ü‚È‚­‚·‚é‚½‚ß‚Ìô•¶B
+                // å¤–éƒ¨ã®DTDã‚’èª­ã¿è¾¼ã¾ãªãã™ã‚‹ãŸã‚ã®å‘ªæ–‡ã€‚
                 reader
                         .setFeature(
                                 "http://apache.org/xml/features/nonvalidating/load-external-dtd",
                                 false);
             } catch (SAXNotRecognizedException e) {
                 Logger.getLogger("blanco.xml.bind").finest(
-                        "ŠO•” DTD ‚ğ“Ç‚İ‚Ü‚È‚­‚·‚é‚½‚ß‚Ìİ’è‚ÌÀ{’†‚É—áŠO‚ª”­¶‚µ‚Ü‚µ‚½: " + e.toString());
+                        "å¤–éƒ¨ DTD ã‚’èª­ã¿è¾¼ã¾ãªãã™ã‚‹ãŸã‚ã®è¨­å®šã®å®Ÿæ–½ä¸­ã«ä¾‹å¤–ãŒç™ºç”Ÿã—ã¾ã—ãŸ: " + e.toString());
             }
 
             reader.setContentHandler(handler);
             reader.setDTDHandler(handler);
-            // ƒRƒƒ“ƒg‚ğˆ—‚·‚é‚½‚ß‚ÉƒvƒƒpƒeƒB‚ğİ’èB
+            // ã‚³ãƒ¡ãƒ³ãƒˆã‚’å‡¦ç†ã™ã‚‹ãŸã‚ã«ãƒ—ãƒ­ãƒ‘ãƒ†ã‚£ã‚’è¨­å®šã€‚
             reader.setProperty("http://xml.org/sax/properties/lexical-handler",
                     handler);
 
-            // DTD éŒ¾‚ÍŒ»İ‚Íˆ—‚µ‚Ä‚¢‚Ü‚¹‚ñB
-            // ‚±‚ê‚ÍAŒ»İ‚Ìˆ—”ÍˆÍ‚ğ javax.xml.transform.sax.TransformerHandler
-            // ‚ÆŒÀ’è‚µ‚Ä‚¢‚é‚½‚ß‚Å‚·B
+            // DTD å®£è¨€ã¯ç¾åœ¨ã¯å‡¦ç†ã—ã¦ã„ã¾ã›ã‚“ã€‚
+            // ã“ã‚Œã¯ã€ç¾åœ¨ã®å‡¦ç†ç¯„å›²ã‚’ javax.xml.transform.sax.TransformerHandler
+            // ã¨é™å®šã—ã¦ã„ã‚‹ãŸã‚ã§ã™ã€‚
             // reader.setProperty(
             // "http://xml.org/sax/properties/declaration-handler",
             // handler);
@@ -170,10 +170,10 @@ public class BlancoXmlUnmarshaller {
             return handler.getDocument();
 
         } catch (SAXException e) {
-            throw new IllegalArgumentException("ˆ—’†‚É XML ‰ğÍ—áŠO‚ª”­¶‚µ‚Ü‚µ‚½B: "
+            throw new IllegalArgumentException("å‡¦ç†ä¸­ã« XML è§£æä¾‹å¤–ãŒç™ºç”Ÿã—ã¾ã—ãŸã€‚: "
                     + e.toString(), e);
         } catch (IOException e) {
-            throw new IllegalArgumentException("ˆ—’†‚É“üo—Í—áŠO‚ª”­¶‚µ‚Ü‚µ‚½B: "
+            throw new IllegalArgumentException("å‡¦ç†ä¸­ã«å…¥å‡ºåŠ›ä¾‹å¤–ãŒç™ºç”Ÿã—ã¾ã—ãŸã€‚: "
                     + e.toString(), e);
         } finally {
             if (inStream != null) {
@@ -181,7 +181,7 @@ public class BlancoXmlUnmarshaller {
                     inStream.close();
                 } catch (IOException e) {
                     throw new IllegalArgumentException(
-                            "“ü—ÍƒXƒgƒŠ[ƒ€‚ÌƒNƒ[ƒYˆ—’†‚É“üo—Í—áŠO‚ª”­¶‚µ‚Ü‚µ‚½B: " + e.toString(), e);
+                            "å…¥åŠ›ã‚¹ãƒˆãƒªãƒ¼ãƒ ã®ã‚¯ãƒ­ãƒ¼ã‚ºå‡¦ç†ä¸­ã«å…¥å‡ºåŠ›ä¾‹å¤–ãŒç™ºç”Ÿã—ã¾ã—ãŸã€‚: " + e.toString(), e);
                 }
             }
         }

@@ -1,82 +1,82 @@
 /*
- * ���̃\�[�X�R�[�h�� blanco Framework�ɂ�莩����������܂����B
+ * このソースコードは blanco Frameworkにより自動生成されました。
  */
 package blanco.xml.bind.valueobject;
 
 /**
- * SAX�C�x���g�̂��� prefixMapping���L�����܂��B���̃N���X�� XML/�o�����[�I�u�W�F�N�g�}�b�s���O (X/O�}�b�s���O) blancoXmlBinding �̈ꕔ�ł��B
+ * SAXイベントのうち prefixMappingを記憶します。このクラスは XML/バリューオブジェクトマッピング (X/Oマッピング) blancoXmlBinding の一部です。
  */
 public class BlancoXmlPrefixMapping {
     /**
-     * ��: rdf
+     * 例: rdf
      *
-     * �t�B�[���h: [prefix]�B
-     * �f�t�H���g: [""]�B
+     * フィールド: [prefix]。
+     * デフォルト: [""]。
      */
     private String fPrefix = "";
 
     /**
-     * ��: http://www.w3.org/1999/02/22-rdf-syntax-ns#
+     * 例: http://www.w3.org/1999/02/22-rdf-syntax-ns#
      *
-     * �t�B�[���h: [uri]�B
+     * フィールド: [uri]。
      */
     private String fUri;
 
     /**
-     * �t�B�[���h [prefix] �̒l��ݒ肵�܂��B
+     * フィールド [prefix] の値を設定します。
      *
-     * �t�B�[���h�̐���: [��: rdf]�B
+     * フィールドの説明: [例: rdf]。
      *
-     * @param argPrefix �t�B�[���h[prefix]�ɐݒ肷��l�B
+     * @param argPrefix フィールド[prefix]に設定する値。
      */
     public void setPrefix(final String argPrefix) {
         fPrefix = argPrefix;
     }
 
     /**
-     * �t�B�[���h [prefix] �̒l���擾���܂��B
+     * フィールド [prefix] の値を取得します。
      *
-     * �t�B�[���h�̐���: [��: rdf]�B
-     * �f�t�H���g: [""]�B
+     * フィールドの説明: [例: rdf]。
+     * デフォルト: [""]。
      *
-     * @return �t�B�[���h[prefix]����擾�����l�B
+     * @return フィールド[prefix]から取得した値。
      */
     public String getPrefix() {
         return fPrefix;
     }
 
     /**
-     * �t�B�[���h [uri] �̒l��ݒ肵�܂��B
+     * フィールド [uri] の値を設定します。
      *
-     * �t�B�[���h�̐���: [��: http://www.w3.org/1999/02/22-rdf-syntax-ns#]�B
+     * フィールドの説明: [例: http://www.w3.org/1999/02/22-rdf-syntax-ns#]。
      *
-     * @param argUri �t�B�[���h[uri]�ɐݒ肷��l�B
+     * @param argUri フィールド[uri]に設定する値。
      */
     public void setUri(final String argUri) {
         fUri = argUri;
     }
 
     /**
-     * �t�B�[���h [uri] �̒l���擾���܂��B
+     * フィールド [uri] の値を取得します。
      *
-     * �t�B�[���h�̐���: [��: http://www.w3.org/1999/02/22-rdf-syntax-ns#]�B
+     * フィールドの説明: [例: http://www.w3.org/1999/02/22-rdf-syntax-ns#]。
      *
-     * @return �t�B�[���h[uri]����擾�����l�B
+     * @return フィールド[uri]から取得した値。
      */
     public String getUri() {
         return fUri;
     }
 
     /**
-     * ���̃o�����[�I�u�W�F�N�g�̕�����\�����擾���܂��B
+     * このバリューオブジェクトの文字列表現を取得します。
      *
-     * <P>�g�p��̒���</P>
+     * <P>使用上の注意</P>
      * <UL>
-     * <LI>�I�u�W�F�N�g�̃V�����[�͈͂̂ݕ����񉻂̏����ΏۂƂȂ�܂��B
-     * <LI>�I�u�W�F�N�g���z�Q�Ƃ��Ă���ꍇ�ɂ́A���̃��\�b�h�͎g��Ȃ��ł��������B
+     * <LI>オブジェクトのシャロー範囲のみ文字列化の処理対象となります。
+     * <LI>オブジェクトが循環参照している場合には、このメソッドは使わないでください。
      * </UL>
      *
-     * @return �o�����[�I�u�W�F�N�g�̕�����\���B
+     * @return バリューオブジェクトの文字列表現。
      */
     @Override
     public String toString() {

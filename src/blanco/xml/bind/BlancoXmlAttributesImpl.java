@@ -27,48 +27,48 @@ import blanco.commons.util.BlancoStringUtil;
 import blanco.xml.bind.valueobject.BlancoXmlAttribute;
 
 /**
- * blancoXmlBinding ‚Å—˜—p‚³‚ê‚éƒAƒgƒŠƒrƒ…[ƒgÀ‘•‚Å‚·B
+ * blancoXmlBinding ã§åˆ©ç”¨ã•ã‚Œã‚‹ã‚¢ãƒˆãƒªãƒ“ãƒ¥ãƒ¼ãƒˆå®Ÿè£…ã§ã™ã€‚
  * 
- * ‚±‚ÌƒNƒ‰ƒX‚Í XML/ƒoƒŠƒ…[ƒIƒuƒWƒFƒNƒgƒ}ƒbƒsƒ“ƒO (X/Oƒ}ƒbƒsƒ“ƒO) blancoXmlBinding ‚Ìˆê•”‚Å‚·B
+ * ã“ã®ã‚¯ãƒ©ã‚¹ã¯ XML/ãƒãƒªãƒ¥ãƒ¼ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãƒãƒƒãƒ”ãƒ³ã‚° (X/Oãƒãƒƒãƒ”ãƒ³ã‚°) blancoXmlBinding ã®ä¸€éƒ¨ã§ã™ã€‚
  * 
  * @author IGA Tosiki
  */
 public class BlancoXmlAttributesImpl implements Attributes {
     /**
-     * ÀÛ‚ÌƒAƒgƒŠƒrƒ…[ƒg‚ÌƒŠƒXƒgB
+     * å®Ÿéš›ã®ã‚¢ãƒˆãƒªãƒ“ãƒ¥ãƒ¼ãƒˆã®ãƒªã‚¹ãƒˆã€‚
      */
     private List<BlancoXmlAttribute> fAttrs = null;
 
     /**
-     * ƒAƒgƒŠƒrƒ…[ƒgÀ‘•‚ÌƒCƒ“ƒXƒ^ƒ“ƒX‚ğ¶¬‚µ‚Ü‚·B
+     * ã‚¢ãƒˆãƒªãƒ“ãƒ¥ãƒ¼ãƒˆå®Ÿè£…ã®ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’ç”Ÿæˆã—ã¾ã™ã€‚
      * 
      * @param attrs
-     *            ƒAƒgƒŠƒrƒ…[ƒg‚ÌƒŠƒXƒgB
+     *            ã‚¢ãƒˆãƒªãƒ“ãƒ¥ãƒ¼ãƒˆã®ãƒªã‚¹ãƒˆã€‚
      */
     public BlancoXmlAttributesImpl(final List<BlancoXmlAttribute> attrs) {
         if (attrs == null) {
             throw new IllegalArgumentException(
-                    "BlancoXmlMarshallerAttributesImpl‚ÌƒRƒ“ƒXƒgƒ‰ƒNƒ^‚Énull‚Ìˆø”‚ª—^‚¦‚ç‚ê‚Ü‚µ‚½B");
+                    "BlancoXmlMarshallerAttributesImplã®ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿ã«nullã®å¼•æ•°ãŒä¸ãˆã‚‰ã‚Œã¾ã—ãŸã€‚");
         }
 
         fAttrs = attrs;
     }
 
     /**
-     * ƒŠƒXƒg“à‚É‚ ‚é‘®«‚Ì”‚ğ•Ô‚µ‚Ü‚·B
+     * ãƒªã‚¹ãƒˆå†…ã«ã‚ã‚‹å±æ€§ã®æ•°ã‚’è¿”ã—ã¾ã™ã€‚
      * 
-     * @return ‘®«‚Ì”B
+     * @return å±æ€§ã®æ•°ã€‚
      */
     public int getLength() {
         return fAttrs.size();
     }
 
     /**
-     * ‘®«‚Ì–¼‘O‹óŠÔURI ‚ğŒŸõ‚µ‚Ü‚·B
+     * å±æ€§ã®åå‰ç©ºé–“URI ã‚’æ¤œç´¢ã—ã¾ã™ã€‚
      * 
      * @param index
-     *            ‘®«ƒCƒ“ƒfƒBƒbƒNƒXB
-     * @return –¼‘O‹óŠÔURIB
+     *            å±æ€§ã‚¤ãƒ³ãƒ‡ã‚£ãƒƒã‚¯ã‚¹ã€‚
+     * @return åå‰ç©ºé–“URIã€‚
      */
     public String getURI(int index) {
         final BlancoXmlAttribute attribute = getAttr(index);
@@ -80,11 +80,11 @@ public class BlancoXmlAttributesImpl implements Attributes {
     }
 
     /**
-     * ‘®«‚Ìƒ[ƒJƒ‹–¼‚ğŒŸõ‚µ‚Ü‚·B
+     * å±æ€§ã®ãƒ­ãƒ¼ã‚«ãƒ«åã‚’æ¤œç´¢ã—ã¾ã™ã€‚
      * 
      * @param index
-     *            ‘®«ƒCƒ“ƒfƒBƒbƒNƒXB
-     * @return ƒ[ƒJƒ‹–¼B
+     *            å±æ€§ã‚¤ãƒ³ãƒ‡ã‚£ãƒƒã‚¯ã‚¹ã€‚
+     * @return ãƒ­ãƒ¼ã‚«ãƒ«åã€‚
      */
     public String getLocalName(int index) {
         final BlancoXmlAttribute attribute = getAttr(index);
@@ -96,11 +96,11 @@ public class BlancoXmlAttributesImpl implements Attributes {
     }
 
     /**
-     * ‘®«‚Ì XML 1.0 Cü–¼‚ğŒŸõ‚µ‚Ü‚·B
+     * å±æ€§ã® XML 1.0 ä¿®é£¾åã‚’æ¤œç´¢ã—ã¾ã™ã€‚
      * 
      * @param index
-     *            ‘®«ƒCƒ“ƒfƒBƒbƒNƒXB
-     * @return Cü–¼B
+     *            å±æ€§ã‚¤ãƒ³ãƒ‡ã‚£ãƒƒã‚¯ã‚¹ã€‚
+     * @return ä¿®é£¾åã€‚
      */
     public String getQName(int index) {
         final BlancoXmlAttribute attribute = getAttr(index);
@@ -110,7 +110,7 @@ public class BlancoXmlAttributesImpl implements Attributes {
 
         final String qName = BlancoStringUtil.null2Blank(attribute.getQName());
         if (qName.length() == 0) {
-            // qName‚É’l‚ªw’è‚³‚ê‚Ä‚¢‚È‚¢ê‡‚É‚ÍlocalName‚ğ–ß‚µ‚Ü‚·B
+            // qNameã«å€¤ãŒæŒ‡å®šã•ã‚Œã¦ã„ãªã„å ´åˆã«ã¯localNameã‚’æˆ»ã—ã¾ã™ã€‚
             return getLocalName(index);
         }
 
@@ -118,11 +118,11 @@ public class BlancoXmlAttributesImpl implements Attributes {
     }
 
     /**
-     * ‘®«‚ÌŒ^‚ğŒŸõ‚µ‚Ü‚·B
+     * å±æ€§ã®å‹ã‚’æ¤œç´¢ã—ã¾ã™ã€‚
      * 
      * @param index
-     *            ‘®«ƒCƒ“ƒfƒBƒbƒNƒXB
-     * @return ‘®«‚ÌŒ^B
+     *            å±æ€§ã‚¤ãƒ³ãƒ‡ã‚£ãƒƒã‚¯ã‚¹ã€‚
+     * @return å±æ€§ã®å‹ã€‚
      */
     public String getType(int index) {
         final BlancoXmlAttribute attribute = getAttr(index);
@@ -134,11 +134,11 @@ public class BlancoXmlAttributesImpl implements Attributes {
     }
 
     /**
-     * ‘®«‚Ì’l‚ğŒŸõ‚µ‚Ü‚·B
+     * å±æ€§ã®å€¤ã‚’æ¤œç´¢ã—ã¾ã™ã€‚
      * 
      * @param index
-     *            ‘®«ƒCƒ“ƒfƒBƒbƒNƒXB
-     * @return ‘®«‚Ì’lB
+     *            å±æ€§ã‚¤ãƒ³ãƒ‡ã‚£ãƒƒã‚¯ã‚¹ã€‚
+     * @return å±æ€§ã®å€¤ã€‚
      */
     public String getValue(int index) {
         final BlancoXmlAttribute attribute = getAttr(index);
@@ -150,13 +150,13 @@ public class BlancoXmlAttributesImpl implements Attributes {
     }
 
     /**
-     * ‘®«‚ÌƒCƒ“ƒfƒbƒNƒX‚ğŒŸõ‚µ‚Ü‚·B
+     * å±æ€§ã®ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã‚’æ¤œç´¢ã—ã¾ã™ã€‚
      * 
      * @param uri
-     *            –¼‘O‹óŠÔURIB
+     *            åå‰ç©ºé–“URIã€‚
      * @param localName
-     *            ƒ[ƒJƒ‹–¼B
-     * @return ‘®«ƒCƒ“ƒfƒbƒNƒXBƒŠƒXƒg“à‚ÉŠY“–‚·‚é‘®«‚ª‘¶İ‚µ‚È‚¢ê‡‚Í -1B
+     *            ãƒ­ãƒ¼ã‚«ãƒ«åã€‚
+     * @return å±æ€§ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã€‚ãƒªã‚¹ãƒˆå†…ã«è©²å½“ã™ã‚‹å±æ€§ãŒå­˜åœ¨ã—ãªã„å ´åˆã¯ -1ã€‚
      */
     public int getIndex(final String uri, final String localName) {
         final int attrSize = fAttrs.size();
@@ -170,16 +170,16 @@ public class BlancoXmlAttributesImpl implements Attributes {
             }
         }
 
-        // ”­Œ©‚Å‚«‚Ü‚¹‚ñ‚Å‚µ‚½B
+        // ç™ºè¦‹ã§ãã¾ã›ã‚“ã§ã—ãŸã€‚
         return -1;
     }
 
     /**
-     * ‘®«‚ÌƒCƒ“ƒfƒbƒNƒX‚ğŒŸõ‚µ‚Ü‚·B
+     * å±æ€§ã®ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã‚’æ¤œç´¢ã—ã¾ã™ã€‚
      * 
      * @param qName
-     *            Cü–¼B
-     * @return ‘®«ƒCƒ“ƒfƒbƒNƒXBƒŠƒXƒg“à‚ÉŠY“–‚·‚é‘®«‚ª‘¶İ‚µ‚È‚¢ê‡‚Í -1B
+     *            ä¿®é£¾åã€‚
+     * @return å±æ€§ã‚¤ãƒ³ãƒ‡ãƒƒã‚¯ã‚¹ã€‚ãƒªã‚¹ãƒˆå†…ã«è©²å½“ã™ã‚‹å±æ€§ãŒå­˜åœ¨ã—ãªã„å ´åˆã¯ -1ã€‚
      */
     public int getIndex(final String qName) {
         final int attrSize = fAttrs.size();
@@ -191,23 +191,23 @@ public class BlancoXmlAttributesImpl implements Attributes {
             }
         }
 
-        // ”­Œ©‚Å‚«‚Ü‚¹‚ñ‚Å‚µ‚½B
+        // ç™ºè¦‹ã§ãã¾ã›ã‚“ã§ã—ãŸã€‚
         return -1;
     }
 
     /**
-     * ‘®«‚ÌŒ^‚ğŒŸõ‚µ‚Ü‚·B
+     * å±æ€§ã®å‹ã‚’æ¤œç´¢ã—ã¾ã™ã€‚
      * 
      * @param uri
-     *            –¼‘O‹óŠÔURIB
+     *            åå‰ç©ºé–“URIã€‚
      * @param localName
-     *            ƒ[ƒJƒ‹–¼B
-     * @return ‘®«‚ÌŒ^B
+     *            ãƒ­ãƒ¼ã‚«ãƒ«åã€‚
+     * @return å±æ€§ã®å‹ã€‚
      */
     public String getType(final String uri, final String localName) {
         final BlancoXmlAttribute attrFound = findByUriLocalName(uri, localName);
         if (attrFound == null) {
-            // ”­Œ©‚Å‚«‚Ü‚¹‚ñ‚Å‚µ‚½B
+            // ç™ºè¦‹ã§ãã¾ã›ã‚“ã§ã—ãŸã€‚
             return null;
         }
 
@@ -215,16 +215,16 @@ public class BlancoXmlAttributesImpl implements Attributes {
     }
 
     /**
-     * ‘®«‚ÌŒ^‚ğŒŸõ‚µ‚Ü‚·B
+     * å±æ€§ã®å‹ã‚’æ¤œç´¢ã—ã¾ã™ã€‚
      * 
      * @param qName
-     *            Cü–¼B
-     * @return ‘®«‚ÌŒ^B
+     *            ä¿®é£¾åã€‚
+     * @return å±æ€§ã®å‹ã€‚
      */
     public String getType(final String qName) {
         final BlancoXmlAttribute attrFound = findByQName(qName);
         if (attrFound == null) {
-            // ”­Œ©‚Å‚«‚Ü‚¹‚ñ‚Å‚µ‚½B
+            // ç™ºè¦‹ã§ãã¾ã›ã‚“ã§ã—ãŸã€‚
             return null;
         }
 
@@ -232,18 +232,18 @@ public class BlancoXmlAttributesImpl implements Attributes {
     }
 
     /**
-     * ‘®«‚Ì’l‚ğŒŸõ‚µ‚Ü‚·B
+     * å±æ€§ã®å€¤ã‚’æ¤œç´¢ã—ã¾ã™ã€‚
      * 
      * @param uri
-     *            –¼‘O‹óŠÔURIB
+     *            åå‰ç©ºé–“URIã€‚
      * @param localName
-     *            ƒ[ƒJƒ‹–¼B
-     * @return ‘®«‚Ì’lB
+     *            ãƒ­ãƒ¼ã‚«ãƒ«åã€‚
+     * @return å±æ€§ã®å€¤ã€‚
      */
     public String getValue(final String uri, final String localName) {
         final BlancoXmlAttribute attrFound = findByUriLocalName(uri, localName);
         if (attrFound == null) {
-            // ”­Œ©‚Å‚«‚Ü‚¹‚ñ‚Å‚µ‚½B
+            // ç™ºè¦‹ã§ãã¾ã›ã‚“ã§ã—ãŸã€‚
             return null;
         }
 
@@ -251,16 +251,16 @@ public class BlancoXmlAttributesImpl implements Attributes {
     }
 
     /**
-     * ‘®«‚Ì’l‚ğŒŸõ‚µ‚Ü‚·B
+     * å±æ€§ã®å€¤ã‚’æ¤œç´¢ã—ã¾ã™ã€‚
      * 
      * @param qName
-     *            Cü–¼B
-     * @return ‘®«‚Ì’lB
+     *            ä¿®é£¾åã€‚
+     * @return å±æ€§ã®å€¤ã€‚
      */
     public String getValue(final String qName) {
         final BlancoXmlAttribute attrFound = findByQName(qName);
         if (attrFound == null) {
-            // ”­Œ©‚Å‚«‚Ü‚¹‚ñ‚Å‚µ‚½B
+            // ç™ºè¦‹ã§ãã¾ã›ã‚“ã§ã—ãŸã€‚
             return null;
         }
 
@@ -268,22 +268,22 @@ public class BlancoXmlAttributesImpl implements Attributes {
     }
 
     /**
-     * “Á•Ê‚É—pˆÓ‚µ‚Ä‚¢‚éA“à•”‚ğ–\˜I‚·‚é‚½‚ß‚Ìƒƒ\ƒbƒhB
+     * ç‰¹åˆ¥ã«ç”¨æ„ã—ã¦ã„ã‚‹ã€å†…éƒ¨ã‚’æš´éœ²ã™ã‚‹ãŸã‚ã®ãƒ¡ã‚½ãƒƒãƒ‰ã€‚
      * 
-     * ’Êí‚ÍA‚±‚Ìƒƒ\ƒbƒh‚Í—˜—p‚µ‚Ü‚¹‚ñB
+     * é€šå¸¸ã¯ã€ã“ã®ãƒ¡ã‚½ãƒƒãƒ‰ã¯åˆ©ç”¨ã—ã¾ã›ã‚“ã€‚
      * 
-     * @return ‘®«ƒŠƒXƒgB
+     * @return å±æ€§ãƒªã‚¹ãƒˆã€‚
      */
     public List<BlancoXmlAttribute> getList() {
         return fAttrs;
     }
 
     /**
-     * w’è‚ÌƒCƒ“ƒfƒBƒbƒNƒX‚É‚ ‚é‘®«‚ğæ“¾‚µ‚Ü‚·B
+     * æŒ‡å®šã®ã‚¤ãƒ³ãƒ‡ã‚£ãƒƒã‚¯ã‚¹ã«ã‚ã‚‹å±æ€§ã‚’å–å¾—ã—ã¾ã™ã€‚
      * 
      * @param index
-     *            ‘®«ƒCƒ“ƒfƒBƒbƒNƒXB
-     * @return ‘®«Bw’è‚Ìindex‚ª”ÍˆÍŠO‚Ìê‡‚ÍnullB
+     *            å±æ€§ã‚¤ãƒ³ãƒ‡ã‚£ãƒƒã‚¯ã‚¹ã€‚
+     * @return å±æ€§ã€‚æŒ‡å®šã®indexãŒç¯„å›²å¤–ã®å ´åˆã¯nullã€‚
      */
     private BlancoXmlAttribute getAttr(int index) {
         if (index >= fAttrs.size()) {
@@ -294,13 +294,13 @@ public class BlancoXmlAttributesImpl implements Attributes {
     }
 
     /**
-     * –¼‘O‹óŠÔURI‚Æƒ[ƒJƒ‹–¼‚ğ—p‚¢‚Ä‘®«‚ğŒŸõ‚µ‚Ü‚·B
+     * åå‰ç©ºé–“URIã¨ãƒ­ãƒ¼ã‚«ãƒ«åã‚’ç”¨ã„ã¦å±æ€§ã‚’æ¤œç´¢ã—ã¾ã™ã€‚
      * 
      * @param uri
-     *            –¼‘O‹óŠÔURIB
+     *            åå‰ç©ºé–“URIã€‚
      * @param localName
-     *            ƒ[ƒJƒ‹–¼B
-     * @return ‘®«B
+     *            ãƒ­ãƒ¼ã‚«ãƒ«åã€‚
+     * @return å±æ€§ã€‚
      */
     private BlancoXmlAttribute findByUriLocalName(final String uri,
             final String localName) {
@@ -315,16 +315,16 @@ public class BlancoXmlAttributesImpl implements Attributes {
             }
         }
 
-        // ”­Œ©‚Å‚«‚Ü‚¹‚ñ‚Å‚µ‚½B
+        // ç™ºè¦‹ã§ãã¾ã›ã‚“ã§ã—ãŸã€‚
         return null;
     }
 
     /**
-     * Cü–¼‚ğ—p‚¢‚Ä‘®«‚ğŒŸõ‚µ‚Ü‚·B
+     * ä¿®é£¾åã‚’ç”¨ã„ã¦å±æ€§ã‚’æ¤œç´¢ã—ã¾ã™ã€‚
      * 
      * @param qName
-     *            Cü–¼B
-     * @return ‘®«B
+     *            ä¿®é£¾åã€‚
+     * @return å±æ€§ã€‚
      */
     private BlancoXmlAttribute findByQName(final String qName) {
         final int attrSize = fAttrs.size();
@@ -336,7 +336,7 @@ public class BlancoXmlAttributesImpl implements Attributes {
             }
         }
 
-        // ”­Œ©‚Å‚«‚Ü‚¹‚ñ‚Å‚µ‚½B
+        // ç™ºè¦‹ã§ãã¾ã›ã‚“ã§ã—ãŸã€‚
         return null;
     }
 }

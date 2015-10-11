@@ -1,55 +1,55 @@
 /*
- * ‚±‚Ìƒ\[ƒXƒR[ƒh‚Í blanco Framework‚É‚æ‚è©“®¶¬‚³‚ê‚Ü‚µ‚½B
+ * ã“ã®ã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰ã¯ blanco Frameworkã«ã‚ˆã‚Šè‡ªå‹•ç”Ÿæˆã•ã‚Œã¾ã—ãŸã€‚
  */
 package blanco.xml.bind.valueobject;
 
 import java.util.List;
 
 /**
- * SAXƒCƒxƒ“ƒg‚Ì‚¤‚¿ CDATA ‚ğ‹L‰¯‚µ‚Ü‚·B‚±‚ÌƒNƒ‰ƒX‚Í XML/ƒoƒŠƒ…[ƒIƒuƒWƒFƒNƒgƒ}ƒbƒsƒ“ƒO (X/Oƒ}ƒbƒsƒ“ƒO) blancoXmlBinding ‚Ìˆê•”‚Å‚·B
+ * SAXã‚¤ãƒ™ãƒ³ãƒˆã®ã†ã¡ CDATA ã‚’è¨˜æ†¶ã—ã¾ã™ã€‚ã“ã®ã‚¯ãƒ©ã‚¹ã¯ XML/ãƒãƒªãƒ¥ãƒ¼ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãƒãƒƒãƒ”ãƒ³ã‚° (X/Oãƒãƒƒãƒ”ãƒ³ã‚°) blancoXmlBinding ã®ä¸€éƒ¨ã§ã™ã€‚
  */
 public class BlancoXmlCdata extends BlancoXmlNode {
     /**
-     * qƒm[ƒh‚ÌƒŠƒXƒgB
+     * å­ãƒãƒ¼ãƒ‰ã®ãƒªã‚¹ãƒˆã€‚
      *
-     * ƒtƒB[ƒ‹ƒh: [childNodes]B
-     * ƒfƒtƒHƒ‹ƒg: [new java.util.ArrayList<blanco.xml.bind.valueobject.BlancoXmlNode>()]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰: [childNodes]ã€‚
+     * ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆ: [new java.util.ArrayList<blanco.xml.bind.valueobject.BlancoXmlNode>()]ã€‚
      */
     private List<blanco.xml.bind.valueobject.BlancoXmlNode> fChildNodes = new java.util.ArrayList<blanco.xml.bind.valueobject.BlancoXmlNode>();
 
     /**
-     * ƒtƒB[ƒ‹ƒh [childNodes] ‚Ì’l‚ğİ’è‚µ‚Ü‚·B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ [childNodes] ã®å€¤ã‚’è¨­å®šã—ã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh‚Ìà–¾: [qƒm[ƒh‚ÌƒŠƒXƒgB]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®èª¬æ˜: [å­ãƒãƒ¼ãƒ‰ã®ãƒªã‚¹ãƒˆã€‚]ã€‚
      *
-     * @param argChildNodes ƒtƒB[ƒ‹ƒh[childNodes]‚Éİ’è‚·‚é’lB
+     * @param argChildNodes ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[childNodes]ã«è¨­å®šã™ã‚‹å€¤ã€‚
      */
     public void setChildNodes(final List<blanco.xml.bind.valueobject.BlancoXmlNode> argChildNodes) {
         fChildNodes = argChildNodes;
     }
 
     /**
-     * ƒtƒB[ƒ‹ƒh [childNodes] ‚Ì’l‚ğæ“¾‚µ‚Ü‚·B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ [childNodes] ã®å€¤ã‚’å–å¾—ã—ã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh‚Ìà–¾: [qƒm[ƒh‚ÌƒŠƒXƒgB]B
-     * ƒfƒtƒHƒ‹ƒg: [new java.util.ArrayList<blanco.xml.bind.valueobject.BlancoXmlNode>()]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®èª¬æ˜: [å­ãƒãƒ¼ãƒ‰ã®ãƒªã‚¹ãƒˆã€‚]ã€‚
+     * ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆ: [new java.util.ArrayList<blanco.xml.bind.valueobject.BlancoXmlNode>()]ã€‚
      *
-     * @return ƒtƒB[ƒ‹ƒh[childNodes]‚©‚çæ“¾‚µ‚½’lB
+     * @return ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[childNodes]ã‹ã‚‰å–å¾—ã—ãŸå€¤ã€‚
      */
     public List<blanco.xml.bind.valueobject.BlancoXmlNode> getChildNodes() {
         return fChildNodes;
     }
 
     /**
-     * ‚±‚ÌƒoƒŠƒ…[ƒIƒuƒWƒFƒNƒg‚Ì•¶š—ñ•\Œ»‚ğæ“¾‚µ‚Ü‚·B
+     * ã“ã®ãƒãƒªãƒ¥ãƒ¼ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®æ–‡å­—åˆ—è¡¨ç¾ã‚’å–å¾—ã—ã¾ã™ã€‚
      *
-     * <P>g—pã‚Ì’ˆÓ</P>
+     * <P>ä½¿ç”¨ä¸Šã®æ³¨æ„</P>
      * <UL>
-     * <LI>ƒIƒuƒWƒFƒNƒg‚ÌƒVƒƒƒ[”ÍˆÍ‚Ì‚İ•¶š—ñ‰»‚Ìˆ—‘ÎÛ‚Æ‚È‚è‚Ü‚·B
-     * <LI>ƒIƒuƒWƒFƒNƒg‚ªzŠÂQÆ‚µ‚Ä‚¢‚éê‡‚É‚ÍA‚±‚Ìƒƒ\ƒbƒh‚Íg‚í‚È‚¢‚Å‚­‚¾‚³‚¢B
+     * <LI>ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ã‚·ãƒ£ãƒ­ãƒ¼ç¯„å›²ã®ã¿æ–‡å­—åˆ—åŒ–ã®å‡¦ç†å¯¾è±¡ã¨ãªã‚Šã¾ã™ã€‚
+     * <LI>ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãŒå¾ªç’°å‚ç…§ã—ã¦ã„ã‚‹å ´åˆã«ã¯ã€ã“ã®ãƒ¡ã‚½ãƒƒãƒ‰ã¯ä½¿ã‚ãªã„ã§ãã ã•ã„ã€‚
      * </UL>
      *
-     * @return ƒoƒŠƒ…[ƒIƒuƒWƒFƒNƒg‚Ì•¶š—ñ•\Œ»B
+     * @return ãƒãƒªãƒ¥ãƒ¼ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®æ–‡å­—åˆ—è¡¨ç¾ã€‚
      */
     @Override
     public String toString() {

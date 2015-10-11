@@ -39,7 +39,7 @@ public class BlancoXmlMarshaller2Test extends TestCase {
         final BlancoXmlAttribute attr = new BlancoXmlAttribute();
         element.getAtts().add(attr);
         attr.setQName("abc");
-        attr.setValue("値");
+        attr.setValue("蛟､");
         attr.setType("CDATA");
 
         final BlancoXmlElement element2 = new BlancoXmlElement();
@@ -47,13 +47,13 @@ public class BlancoXmlMarshaller2Test extends TestCase {
         element2.setQName("DEF");
 
         final BlancoXmlCharacters characters = new BlancoXmlCharacters();
-        characters.setValue("これは値です。");
+        characters.setValue("縺薙ｌ縺ｯ蛟､縺ｧ縺吶�");
         element2.getChildNodes().add(characters);
 
         final BlancoXmlCdata cdata = new BlancoXmlCdata();
         final BlancoXmlCharacters characters2 = new BlancoXmlCharacters();
         cdata.getChildNodes().add(characters2);
-        characters2.setValue("CDATA中の値です。");
+        characters2.setValue("CDATA荳ｭ縺ｮ蛟､縺ｧ縺吶�");
         element2.getChildNodes().add(cdata);
 
         element2.getChildNodes().add(characters);

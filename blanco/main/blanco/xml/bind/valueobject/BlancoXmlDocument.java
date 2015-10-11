@@ -1,173 +1,173 @@
 /*
- * ���̃\�[�X�R�[�h�� blanco Framework�ɂ�莩����������܂����B
+ * このソースコードは blanco Frameworkにより自動生成されました。
  */
 package blanco.xml.bind.valueobject;
 
 import java.util.List;
 
 /**
- * SAX�C�x���g�̂��� �h�L�������g���L�����܂��B���̃N���X�� XML/�o�����[�I�u�W�F�N�g�}�b�s���O (X/O�}�b�s���O) blancoXmlBinding �̈ꕔ�ł��B
+ * SAXイベントのうち ドキュメントを記憶します。このクラスは XML/バリューオブジェクトマッピング (X/Oマッピング) blancoXmlBinding の一部です。
  */
 public class BlancoXmlDocument extends BlancoXmlNode {
     /**
-     * ���̃h�L�������g�ɘA�Ȃ�q�m�[�h���i�[���܂��B�h�L�������g�͑����̏ꍇ�ЂƂ̃��[�g�G�������g���i�[���Ă��܂��B�ꍇ�ɂ�� DTD�֘A���Ȃǂ��i�[����܂��B
+     * このドキュメントに連なる子ノードを格納します。ドキュメントは多くの場合ひとつのルートエレメントを格納しています。場合により DTD関連情報なども格納されます。
      *
-     * �t�B�[���h: [childNodes]�B
-     * �f�t�H���g: [new java.util.ArrayList<blanco.xml.bind.valueobject.BlancoXmlNode>()]�B
+     * フィールド: [childNodes]。
+     * デフォルト: [new java.util.ArrayList<blanco.xml.bind.valueobject.BlancoXmlNode>()]。
      */
     private List<blanco.xml.bind.valueobject.BlancoXmlNode> fChildNodes = new java.util.ArrayList<blanco.xml.bind.valueobject.BlancoXmlNode>();
 
     /**
-     * ���P�[�V�����B
+     * ロケーション。
      *
-     * �t�B�[���h: [locator]�B
+     * フィールド: [locator]。
      */
     private BlancoXmlLocator fLocator;
 
     /**
-     * prefixMapping�̃��X�g���i�[���܂��B
+     * prefixMappingのリストを格納します。
      *
-     * �t�B�[���h: [prefixMappings]�B
-     * �f�t�H���g: [new java.util.ArrayList<blanco.xml.bind.valueobject.BlancoXmlPrefixMapping>()]�B
+     * フィールド: [prefixMappings]。
+     * デフォルト: [new java.util.ArrayList<blanco.xml.bind.valueobject.BlancoXmlPrefixMapping>()]。
      */
     private List<blanco.xml.bind.valueobject.BlancoXmlPrefixMapping> fPrefixMappings = new java.util.ArrayList<blanco.xml.bind.valueobject.BlancoXmlPrefixMapping>();
 
     /**
-     * XML �̃o�[�W�����B1.1 �Ȃǂ��w��B
+     * XML のバージョン。1.1 などを指定。
      *
-     * �t�B�[���h: [version]�B
+     * フィールド: [version]。
      */
     private String fVersion;
 
     /**
-     * XML �̃G���R�[�f�B���O
+     * XML のエンコーディング
      *
-     * �t�B�[���h: [encoding]�B
+     * フィールド: [encoding]。
      */
     private String fEncoding;
 
     /**
-     * �t�B�[���h [childNodes] �̒l��ݒ肵�܂��B
+     * フィールド [childNodes] の値を設定します。
      *
-     * �t�B�[���h�̐���: [���̃h�L�������g�ɘA�Ȃ�q�m�[�h���i�[���܂��B�h�L�������g�͑����̏ꍇ�ЂƂ̃��[�g�G�������g���i�[���Ă��܂��B�ꍇ�ɂ�� DTD�֘A���Ȃǂ��i�[����܂��B]�B
+     * フィールドの説明: [このドキュメントに連なる子ノードを格納します。ドキュメントは多くの場合ひとつのルートエレメントを格納しています。場合により DTD関連情報なども格納されます。]。
      *
-     * @param argChildNodes �t�B�[���h[childNodes]�ɐݒ肷��l�B
+     * @param argChildNodes フィールド[childNodes]に設定する値。
      */
     public void setChildNodes(final List<blanco.xml.bind.valueobject.BlancoXmlNode> argChildNodes) {
         fChildNodes = argChildNodes;
     }
 
     /**
-     * �t�B�[���h [childNodes] �̒l���擾���܂��B
+     * フィールド [childNodes] の値を取得します。
      *
-     * �t�B�[���h�̐���: [���̃h�L�������g�ɘA�Ȃ�q�m�[�h���i�[���܂��B�h�L�������g�͑����̏ꍇ�ЂƂ̃��[�g�G�������g���i�[���Ă��܂��B�ꍇ�ɂ�� DTD�֘A���Ȃǂ��i�[����܂��B]�B
-     * �f�t�H���g: [new java.util.ArrayList<blanco.xml.bind.valueobject.BlancoXmlNode>()]�B
+     * フィールドの説明: [このドキュメントに連なる子ノードを格納します。ドキュメントは多くの場合ひとつのルートエレメントを格納しています。場合により DTD関連情報なども格納されます。]。
+     * デフォルト: [new java.util.ArrayList<blanco.xml.bind.valueobject.BlancoXmlNode>()]。
      *
-     * @return �t�B�[���h[childNodes]����擾�����l�B
+     * @return フィールド[childNodes]から取得した値。
      */
     public List<blanco.xml.bind.valueobject.BlancoXmlNode> getChildNodes() {
         return fChildNodes;
     }
 
     /**
-     * �t�B�[���h [locator] �̒l��ݒ肵�܂��B
+     * フィールド [locator] の値を設定します。
      *
-     * �t�B�[���h�̐���: [���P�[�V�����B]�B
+     * フィールドの説明: [ロケーション。]。
      *
-     * @param argLocator �t�B�[���h[locator]�ɐݒ肷��l�B
+     * @param argLocator フィールド[locator]に設定する値。
      */
     public void setLocator(final BlancoXmlLocator argLocator) {
         fLocator = argLocator;
     }
 
     /**
-     * �t�B�[���h [locator] �̒l���擾���܂��B
+     * フィールド [locator] の値を取得します。
      *
-     * �t�B�[���h�̐���: [���P�[�V�����B]�B
+     * フィールドの説明: [ロケーション。]。
      *
-     * @return �t�B�[���h[locator]����擾�����l�B
+     * @return フィールド[locator]から取得した値。
      */
     public BlancoXmlLocator getLocator() {
         return fLocator;
     }
 
     /**
-     * �t�B�[���h [prefixMappings] �̒l��ݒ肵�܂��B
+     * フィールド [prefixMappings] の値を設定します。
      *
-     * �t�B�[���h�̐���: [prefixMapping�̃��X�g���i�[���܂��B]�B
+     * フィールドの説明: [prefixMappingのリストを格納します。]。
      *
-     * @param argPrefixMappings �t�B�[���h[prefixMappings]�ɐݒ肷��l�B
+     * @param argPrefixMappings フィールド[prefixMappings]に設定する値。
      */
     public void setPrefixMappings(final List<blanco.xml.bind.valueobject.BlancoXmlPrefixMapping> argPrefixMappings) {
         fPrefixMappings = argPrefixMappings;
     }
 
     /**
-     * �t�B�[���h [prefixMappings] �̒l���擾���܂��B
+     * フィールド [prefixMappings] の値を取得します。
      *
-     * �t�B�[���h�̐���: [prefixMapping�̃��X�g���i�[���܂��B]�B
-     * �f�t�H���g: [new java.util.ArrayList<blanco.xml.bind.valueobject.BlancoXmlPrefixMapping>()]�B
+     * フィールドの説明: [prefixMappingのリストを格納します。]。
+     * デフォルト: [new java.util.ArrayList<blanco.xml.bind.valueobject.BlancoXmlPrefixMapping>()]。
      *
-     * @return �t�B�[���h[prefixMappings]����擾�����l�B
+     * @return フィールド[prefixMappings]から取得した値。
      */
     public List<blanco.xml.bind.valueobject.BlancoXmlPrefixMapping> getPrefixMappings() {
         return fPrefixMappings;
     }
 
     /**
-     * �t�B�[���h [version] �̒l��ݒ肵�܂��B
+     * フィールド [version] の値を設定します。
      *
-     * �t�B�[���h�̐���: [XML �̃o�[�W�����B1.1 �Ȃǂ��w��B]�B
+     * フィールドの説明: [XML のバージョン。1.1 などを指定。]。
      *
-     * @param argVersion �t�B�[���h[version]�ɐݒ肷��l�B
+     * @param argVersion フィールド[version]に設定する値。
      */
     public void setVersion(final String argVersion) {
         fVersion = argVersion;
     }
 
     /**
-     * �t�B�[���h [version] �̒l���擾���܂��B
+     * フィールド [version] の値を取得します。
      *
-     * �t�B�[���h�̐���: [XML �̃o�[�W�����B1.1 �Ȃǂ��w��B]�B
+     * フィールドの説明: [XML のバージョン。1.1 などを指定。]。
      *
-     * @return �t�B�[���h[version]����擾�����l�B
+     * @return フィールド[version]から取得した値。
      */
     public String getVersion() {
         return fVersion;
     }
 
     /**
-     * �t�B�[���h [encoding] �̒l��ݒ肵�܂��B
+     * フィールド [encoding] の値を設定します。
      *
-     * �t�B�[���h�̐���: [XML �̃G���R�[�f�B���O]�B
+     * フィールドの説明: [XML のエンコーディング]。
      *
-     * @param argEncoding �t�B�[���h[encoding]�ɐݒ肷��l�B
+     * @param argEncoding フィールド[encoding]に設定する値。
      */
     public void setEncoding(final String argEncoding) {
         fEncoding = argEncoding;
     }
 
     /**
-     * �t�B�[���h [encoding] �̒l���擾���܂��B
+     * フィールド [encoding] の値を取得します。
      *
-     * �t�B�[���h�̐���: [XML �̃G���R�[�f�B���O]�B
+     * フィールドの説明: [XML のエンコーディング]。
      *
-     * @return �t�B�[���h[encoding]����擾�����l�B
+     * @return フィールド[encoding]から取得した値。
      */
     public String getEncoding() {
         return fEncoding;
     }
 
     /**
-     * ���̃o�����[�I�u�W�F�N�g�̕�����\�����擾���܂��B
+     * このバリューオブジェクトの文字列表現を取得します。
      *
-     * <P>�g�p��̒���</P>
+     * <P>使用上の注意</P>
      * <UL>
-     * <LI>�I�u�W�F�N�g�̃V�����[�͈͂̂ݕ����񉻂̏����ΏۂƂȂ�܂��B
-     * <LI>�I�u�W�F�N�g���z�Q�Ƃ��Ă���ꍇ�ɂ́A���̃��\�b�h�͎g��Ȃ��ł��������B
+     * <LI>オブジェクトのシャロー範囲のみ文字列化の処理対象となります。
+     * <LI>オブジェクトが循環参照している場合には、このメソッドは使わないでください。
      * </UL>
      *
-     * @return �o�����[�I�u�W�F�N�g�̕�����\���B
+     * @return バリューオブジェクトの文字列表現。
      */
     @Override
     public String toString() {

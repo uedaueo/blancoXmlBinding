@@ -1,173 +1,173 @@
 /*
- * ‚±‚Ìƒ\[ƒXƒR[ƒh‚Í blanco Framework‚É‚æ‚è©“®¶¬‚³‚ê‚Ü‚µ‚½B
+ * ã“ã®ã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰ã¯ blanco Frameworkã«ã‚ˆã‚Šè‡ªå‹•ç”Ÿæˆã•ã‚Œã¾ã—ãŸã€‚
  */
 package blanco.xml.bind.valueobject;
 
 import java.util.List;
 
 /**
- * SAXƒCƒxƒ“ƒg‚Ì‚¤‚¿ —v‘f(Element)‚ğ‹L‰¯‚µ‚Ü‚·B‚±‚ÌƒNƒ‰ƒX‚Í XML/ƒoƒŠƒ…[ƒIƒuƒWƒFƒNƒgƒ}ƒbƒsƒ“ƒO (X/Oƒ}ƒbƒsƒ“ƒO) blancoXmlBinding ‚Ìˆê•”‚Å‚·B
+ * SAXã‚¤ãƒ™ãƒ³ãƒˆã®ã†ã¡ è¦ç´ (Element)ã‚’è¨˜æ†¶ã—ã¾ã™ã€‚ã“ã®ã‚¯ãƒ©ã‚¹ã¯ XML/ãƒãƒªãƒ¥ãƒ¼ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãƒãƒƒãƒ”ãƒ³ã‚° (X/Oãƒãƒƒãƒ”ãƒ³ã‚°) blancoXmlBinding ã®ä¸€éƒ¨ã§ã™ã€‚
  */
 public class BlancoXmlElement extends BlancoXmlNode {
     /**
-     * –¼‘O‹óŠÔURIB
+     * åå‰ç©ºé–“URIã€‚
      *
-     * ƒtƒB[ƒ‹ƒh: [uri]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰: [uri]ã€‚
      */
     private String fUri;
 
     /**
-     * ƒ[ƒJƒ‹–¼B
+     * ãƒ­ãƒ¼ã‚«ãƒ«åã€‚
      *
-     * ƒtƒB[ƒ‹ƒh: [localName]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰: [localName]ã€‚
      */
     private String fLocalName;
 
     /**
-     * ‘O’uCüq•t‚«‚ÌCü–¼B
+     * å‰ç½®ä¿®é£¾å­ä»˜ãã®ä¿®é£¾åã€‚
      *
-     * ƒtƒB[ƒ‹ƒh: [qName]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰: [qName]ã€‚
      */
     private String fQName;
 
     /**
-     * blanco.xml.BlancoXmlAttribute‚ÌƒŠƒXƒgB
+     * blanco.xml.BlancoXmlAttributeã®ãƒªã‚¹ãƒˆã€‚
      *
-     * ƒtƒB[ƒ‹ƒh: [atts]B
-     * ƒfƒtƒHƒ‹ƒg: [new java.util.ArrayList<blanco.xml.bind.valueobject.BlancoXmlAttribute>()]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰: [atts]ã€‚
+     * ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆ: [new java.util.ArrayList<blanco.xml.bind.valueobject.BlancoXmlAttribute>()]ã€‚
      */
     private List<blanco.xml.bind.valueobject.BlancoXmlAttribute> fAtts = new java.util.ArrayList<blanco.xml.bind.valueobject.BlancoXmlAttribute>();
 
     /**
-     * qƒm[ƒh‚ÌƒŠƒXƒgB
+     * å­ãƒãƒ¼ãƒ‰ã®ãƒªã‚¹ãƒˆã€‚
      *
-     * ƒtƒB[ƒ‹ƒh: [childNodes]B
-     * ƒfƒtƒHƒ‹ƒg: [new java.util.ArrayList<blanco.xml.bind.valueobject.BlancoXmlNode>()]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰: [childNodes]ã€‚
+     * ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆ: [new java.util.ArrayList<blanco.xml.bind.valueobject.BlancoXmlNode>()]ã€‚
      */
     private List<blanco.xml.bind.valueobject.BlancoXmlNode> fChildNodes = new java.util.ArrayList<blanco.xml.bind.valueobject.BlancoXmlNode>();
 
     /**
-     * ƒtƒB[ƒ‹ƒh [uri] ‚Ì’l‚ğİ’è‚µ‚Ü‚·B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ [uri] ã®å€¤ã‚’è¨­å®šã—ã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh‚Ìà–¾: [–¼‘O‹óŠÔURIB]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®èª¬æ˜: [åå‰ç©ºé–“URIã€‚]ã€‚
      *
-     * @param argUri ƒtƒB[ƒ‹ƒh[uri]‚Éİ’è‚·‚é’lB
+     * @param argUri ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[uri]ã«è¨­å®šã™ã‚‹å€¤ã€‚
      */
     public void setUri(final String argUri) {
         fUri = argUri;
     }
 
     /**
-     * ƒtƒB[ƒ‹ƒh [uri] ‚Ì’l‚ğæ“¾‚µ‚Ü‚·B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ [uri] ã®å€¤ã‚’å–å¾—ã—ã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh‚Ìà–¾: [–¼‘O‹óŠÔURIB]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®èª¬æ˜: [åå‰ç©ºé–“URIã€‚]ã€‚
      *
-     * @return ƒtƒB[ƒ‹ƒh[uri]‚©‚çæ“¾‚µ‚½’lB
+     * @return ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[uri]ã‹ã‚‰å–å¾—ã—ãŸå€¤ã€‚
      */
     public String getUri() {
         return fUri;
     }
 
     /**
-     * ƒtƒB[ƒ‹ƒh [localName] ‚Ì’l‚ğİ’è‚µ‚Ü‚·B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ [localName] ã®å€¤ã‚’è¨­å®šã—ã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh‚Ìà–¾: [ƒ[ƒJƒ‹–¼B]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®èª¬æ˜: [ãƒ­ãƒ¼ã‚«ãƒ«åã€‚]ã€‚
      *
-     * @param argLocalName ƒtƒB[ƒ‹ƒh[localName]‚Éİ’è‚·‚é’lB
+     * @param argLocalName ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[localName]ã«è¨­å®šã™ã‚‹å€¤ã€‚
      */
     public void setLocalName(final String argLocalName) {
         fLocalName = argLocalName;
     }
 
     /**
-     * ƒtƒB[ƒ‹ƒh [localName] ‚Ì’l‚ğæ“¾‚µ‚Ü‚·B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ [localName] ã®å€¤ã‚’å–å¾—ã—ã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh‚Ìà–¾: [ƒ[ƒJƒ‹–¼B]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®èª¬æ˜: [ãƒ­ãƒ¼ã‚«ãƒ«åã€‚]ã€‚
      *
-     * @return ƒtƒB[ƒ‹ƒh[localName]‚©‚çæ“¾‚µ‚½’lB
+     * @return ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[localName]ã‹ã‚‰å–å¾—ã—ãŸå€¤ã€‚
      */
     public String getLocalName() {
         return fLocalName;
     }
 
     /**
-     * ƒtƒB[ƒ‹ƒh [qName] ‚Ì’l‚ğİ’è‚µ‚Ü‚·B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ [qName] ã®å€¤ã‚’è¨­å®šã—ã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh‚Ìà–¾: [‘O’uCüq•t‚«‚ÌCü–¼B]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®èª¬æ˜: [å‰ç½®ä¿®é£¾å­ä»˜ãã®ä¿®é£¾åã€‚]ã€‚
      *
-     * @param argQName ƒtƒB[ƒ‹ƒh[qName]‚Éİ’è‚·‚é’lB
+     * @param argQName ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[qName]ã«è¨­å®šã™ã‚‹å€¤ã€‚
      */
     public void setQName(final String argQName) {
         fQName = argQName;
     }
 
     /**
-     * ƒtƒB[ƒ‹ƒh [qName] ‚Ì’l‚ğæ“¾‚µ‚Ü‚·B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ [qName] ã®å€¤ã‚’å–å¾—ã—ã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh‚Ìà–¾: [‘O’uCüq•t‚«‚ÌCü–¼B]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®èª¬æ˜: [å‰ç½®ä¿®é£¾å­ä»˜ãã®ä¿®é£¾åã€‚]ã€‚
      *
-     * @return ƒtƒB[ƒ‹ƒh[qName]‚©‚çæ“¾‚µ‚½’lB
+     * @return ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[qName]ã‹ã‚‰å–å¾—ã—ãŸå€¤ã€‚
      */
     public String getQName() {
         return fQName;
     }
 
     /**
-     * ƒtƒB[ƒ‹ƒh [atts] ‚Ì’l‚ğİ’è‚µ‚Ü‚·B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ [atts] ã®å€¤ã‚’è¨­å®šã—ã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh‚Ìà–¾: [blanco.xml.BlancoXmlAttribute‚ÌƒŠƒXƒgB]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®èª¬æ˜: [blanco.xml.BlancoXmlAttributeã®ãƒªã‚¹ãƒˆã€‚]ã€‚
      *
-     * @param argAtts ƒtƒB[ƒ‹ƒh[atts]‚Éİ’è‚·‚é’lB
+     * @param argAtts ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[atts]ã«è¨­å®šã™ã‚‹å€¤ã€‚
      */
     public void setAtts(final List<blanco.xml.bind.valueobject.BlancoXmlAttribute> argAtts) {
         fAtts = argAtts;
     }
 
     /**
-     * ƒtƒB[ƒ‹ƒh [atts] ‚Ì’l‚ğæ“¾‚µ‚Ü‚·B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ [atts] ã®å€¤ã‚’å–å¾—ã—ã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh‚Ìà–¾: [blanco.xml.BlancoXmlAttribute‚ÌƒŠƒXƒgB]B
-     * ƒfƒtƒHƒ‹ƒg: [new java.util.ArrayList<blanco.xml.bind.valueobject.BlancoXmlAttribute>()]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®èª¬æ˜: [blanco.xml.BlancoXmlAttributeã®ãƒªã‚¹ãƒˆã€‚]ã€‚
+     * ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆ: [new java.util.ArrayList<blanco.xml.bind.valueobject.BlancoXmlAttribute>()]ã€‚
      *
-     * @return ƒtƒB[ƒ‹ƒh[atts]‚©‚çæ“¾‚µ‚½’lB
+     * @return ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[atts]ã‹ã‚‰å–å¾—ã—ãŸå€¤ã€‚
      */
     public List<blanco.xml.bind.valueobject.BlancoXmlAttribute> getAtts() {
         return fAtts;
     }
 
     /**
-     * ƒtƒB[ƒ‹ƒh [childNodes] ‚Ì’l‚ğİ’è‚µ‚Ü‚·B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ [childNodes] ã®å€¤ã‚’è¨­å®šã—ã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh‚Ìà–¾: [qƒm[ƒh‚ÌƒŠƒXƒgB]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®èª¬æ˜: [å­ãƒãƒ¼ãƒ‰ã®ãƒªã‚¹ãƒˆã€‚]ã€‚
      *
-     * @param argChildNodes ƒtƒB[ƒ‹ƒh[childNodes]‚Éİ’è‚·‚é’lB
+     * @param argChildNodes ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[childNodes]ã«è¨­å®šã™ã‚‹å€¤ã€‚
      */
     public void setChildNodes(final List<blanco.xml.bind.valueobject.BlancoXmlNode> argChildNodes) {
         fChildNodes = argChildNodes;
     }
 
     /**
-     * ƒtƒB[ƒ‹ƒh [childNodes] ‚Ì’l‚ğæ“¾‚µ‚Ü‚·B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ [childNodes] ã®å€¤ã‚’å–å¾—ã—ã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh‚Ìà–¾: [qƒm[ƒh‚ÌƒŠƒXƒgB]B
-     * ƒfƒtƒHƒ‹ƒg: [new java.util.ArrayList<blanco.xml.bind.valueobject.BlancoXmlNode>()]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®èª¬æ˜: [å­ãƒãƒ¼ãƒ‰ã®ãƒªã‚¹ãƒˆã€‚]ã€‚
+     * ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆ: [new java.util.ArrayList<blanco.xml.bind.valueobject.BlancoXmlNode>()]ã€‚
      *
-     * @return ƒtƒB[ƒ‹ƒh[childNodes]‚©‚çæ“¾‚µ‚½’lB
+     * @return ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[childNodes]ã‹ã‚‰å–å¾—ã—ãŸå€¤ã€‚
      */
     public List<blanco.xml.bind.valueobject.BlancoXmlNode> getChildNodes() {
         return fChildNodes;
     }
 
     /**
-     * ‚±‚ÌƒoƒŠƒ…[ƒIƒuƒWƒFƒNƒg‚Ì•¶š—ñ•\Œ»‚ğæ“¾‚µ‚Ü‚·B
+     * ã“ã®ãƒãƒªãƒ¥ãƒ¼ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®æ–‡å­—åˆ—è¡¨ç¾ã‚’å–å¾—ã—ã¾ã™ã€‚
      *
-     * <P>g—pã‚Ì’ˆÓ</P>
+     * <P>ä½¿ç”¨ä¸Šã®æ³¨æ„</P>
      * <UL>
-     * <LI>ƒIƒuƒWƒFƒNƒg‚ÌƒVƒƒƒ[”ÍˆÍ‚Ì‚İ•¶š—ñ‰»‚Ìˆ—‘ÎÛ‚Æ‚È‚è‚Ü‚·B
-     * <LI>ƒIƒuƒWƒFƒNƒg‚ªzŠÂQÆ‚µ‚Ä‚¢‚éê‡‚É‚ÍA‚±‚Ìƒƒ\ƒbƒh‚Íg‚í‚È‚¢‚Å‚­‚¾‚³‚¢B
+     * <LI>ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ã‚·ãƒ£ãƒ­ãƒ¼ç¯„å›²ã®ã¿æ–‡å­—åˆ—åŒ–ã®å‡¦ç†å¯¾è±¡ã¨ãªã‚Šã¾ã™ã€‚
+     * <LI>ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãŒå¾ªç’°å‚ç…§ã—ã¦ã„ã‚‹å ´åˆã«ã¯ã€ã“ã®ãƒ¡ã‚½ãƒƒãƒ‰ã¯ä½¿ã‚ãªã„ã§ãã ã•ã„ã€‚
      * </UL>
      *
-     * @return ƒoƒŠƒ…[ƒIƒuƒWƒFƒNƒg‚Ì•¶š—ñ•\Œ»B
+     * @return ãƒãƒªãƒ¥ãƒ¼ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®æ–‡å­—åˆ—è¡¨ç¾ã€‚
      */
     @Override
     public String toString() {

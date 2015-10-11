@@ -1,23 +1,23 @@
-blancoXmlBinding��SAX�x�[�X�̔��ɃV���v���ō�����XML�o�C���f�B���O����������c�[���ł��B
+blancoXmlBindingはSAXベースの非常にシンプルで高速なXMLバインディングを実現するツールです。
 
-�T�O�Ƃ��ẮAXML���o�����[�I�u�W�F�N�g�ւƃ}�b�s���O���܂��B����� X/VO�}�b�s���O�ł��B
-���ɑ������݂��� �I�u�W�F�N�g��XML�ւƃ}�b�s���O����̂Ƃ͑S���t�̃A�[�L�e�N�`�����̗p���Ă��܂��B
-�V���v���ȍ\���䂦�Ƀo�����[�I�u�W�F�N�g(Value Object)��XML�̊Ԃ��\�Ȍ��荂���Ƀo�C���f�B���O���邱�Ƃ��ł��܂��B
+概念としては、XMLをバリューオブジェクトへとマッピングします。いわば X/VOマッピングです。
+世に多く存在する オブジェクトをXMLへとマッピングするのとは全く逆のアーキテクチャを採用しています。
+シンプルな構造ゆえにバリューオブジェクト(Value Object)とXMLの間を可能な限り高速にバインディングすることができます。
 
-[����]
-  * SAX�C���^�t�F�[�X�����𗘗p���Ă���_
-    ���x�ቺ�������N�����₷��DOM�C���^�t�F�[�X�͗��p���Ă��܂���B
+[特徴]
+  * SAXインタフェースだけを利用している点
+    速度低下を引き起こしやすいDOMインタフェースは利用していません。
 
-[�J����]
- 1.�ɉ�q�� (Tosiki Iga / �����҂��): �J������шێ������e�S��
+[開発者]
+ 1.伊賀敏樹 (Tosiki Iga / いがぴょん): 開発および維持メンテ担当
 
-[���C�Z���X]
- 1.���C�Z���X �Ƃ��� GNU Lesser General Public License �� Eclipse Public License 1.0 ���f���A�����C�Z���X�ō̗p���Ă��܂��B
-   �����ꂩ�̃��C�Z���X���A�܂��͑S�Ẵ��C�Z���X��K�p���܂��B
+[ライセンス]
+ 1.ライセンス として GNU Lesser General Public License と Eclipse Public License 1.0 をデュアルライセンスで採用しています。
+   いずれかのライセンスを、または全てのライセンスを適用します。
 
-[�ˑ����郉�C�u����]
-���L�̃��C�u�����𗘗p���Ă��܂��B
-���e�I�[�v���\�[�X�E�v���_�N�g�̒񋟎҂Ɋ��ӂ��܂��B
+[依存するライブラリ]
+下記のライブラリを利用しています。
+※各オープンソース・プロダクトの提供者に感謝します。
  1.blancoCommons
-   �T�v: blanco Framework �̍\���v�f�̂ЂƂB���ʃ��C�u������S���܂��B
-   ���C�Z���X: GNU Lesser General Public License
+   概要: blanco Framework の構成要素のひとつ。共通ライブラリを担います。
+   ライセンス: GNU Lesser General Public License

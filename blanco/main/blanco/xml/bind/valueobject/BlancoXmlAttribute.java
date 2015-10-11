@@ -1,167 +1,167 @@
 /*
- * ���̃\�[�X�R�[�h�� blanco Framework�ɂ�莩����������܂����B
+ * このソースコードは blanco Frameworkにより自動生成されました。
  */
 package blanco.xml.bind.valueobject;
 
 /**
- * SAX�C�x���g�̂��� �v�f(Element)�̂Ȃ��� ����(Attribute)���L�����܂��B���̃N���X�� XML/�o�����[�I�u�W�F�N�g�}�b�s���O (X/O�}�b�s���O) blancoXmlBinding �̈ꕔ�ł��B
+ * SAXイベントのうち 要素(Element)のなかの 属性(Attribute)を記憶します。このクラスは XML/バリューオブジェクトマッピング (X/Oマッピング) blancoXmlBinding の一部です。
  */
 public class BlancoXmlAttribute {
     /**
-     * �����̖��O���URI�B
+     * 属性の名前空間URI。
      *
-     * �t�B�[���h: [uri]�B
+     * フィールド: [uri]。
      */
     private String fUri;
 
     /**
-     * �����̃��[�J�����B
+     * 属性のローカル名。
      *
-     * �t�B�[���h: [localName]�B
+     * フィールド: [localName]。
      */
     private String fLocalName;
 
     /**
-     * ������ XML 1.0 �C�����B
+     * 属性の XML 1.0 修飾名。
      *
-     * �t�B�[���h: [qName]�B
+     * フィールド: [qName]。
      */
     private String fQName;
 
     /**
-     * �����̌^�B&quot;CDATA&quot;, &quot;ID&quot;, &quot;IDREF&quot;, &quot;IDREFS&quot;, &quot;NMTOKEN&quot;, &quot;NMTOKENS&quot;, &quot;ENTITY&quot;, &quot;ENTITIES&quot;, &quot;NOTATION&quot; ���i�[����܂��B
+     * 属性の型。&quot;CDATA&quot;, &quot;ID&quot;, &quot;IDREF&quot;, &quot;IDREFS&quot;, &quot;NMTOKEN&quot;, &quot;NMTOKENS&quot;, &quot;ENTITY&quot;, &quot;ENTITIES&quot;, &quot;NOTATION&quot; が格納されます。
      *
-     * �t�B�[���h: [type]�B
+     * フィールド: [type]。
      */
     private String fType;
 
     /**
-     * �����̒l�B
+     * 属性の値。
      *
-     * �t�B�[���h: [value]�B
+     * フィールド: [value]。
      */
     private String fValue;
 
     /**
-     * �t�B�[���h [uri] �̒l��ݒ肵�܂��B
+     * フィールド [uri] の値を設定します。
      *
-     * �t�B�[���h�̐���: [�����̖��O���URI�B]�B
+     * フィールドの説明: [属性の名前空間URI。]。
      *
-     * @param argUri �t�B�[���h[uri]�ɐݒ肷��l�B
+     * @param argUri フィールド[uri]に設定する値。
      */
     public void setUri(final String argUri) {
         fUri = argUri;
     }
 
     /**
-     * �t�B�[���h [uri] �̒l���擾���܂��B
+     * フィールド [uri] の値を取得します。
      *
-     * �t�B�[���h�̐���: [�����̖��O���URI�B]�B
+     * フィールドの説明: [属性の名前空間URI。]。
      *
-     * @return �t�B�[���h[uri]����擾�����l�B
+     * @return フィールド[uri]から取得した値。
      */
     public String getUri() {
         return fUri;
     }
 
     /**
-     * �t�B�[���h [localName] �̒l��ݒ肵�܂��B
+     * フィールド [localName] の値を設定します。
      *
-     * �t�B�[���h�̐���: [�����̃��[�J�����B]�B
+     * フィールドの説明: [属性のローカル名。]。
      *
-     * @param argLocalName �t�B�[���h[localName]�ɐݒ肷��l�B
+     * @param argLocalName フィールド[localName]に設定する値。
      */
     public void setLocalName(final String argLocalName) {
         fLocalName = argLocalName;
     }
 
     /**
-     * �t�B�[���h [localName] �̒l���擾���܂��B
+     * フィールド [localName] の値を取得します。
      *
-     * �t�B�[���h�̐���: [�����̃��[�J�����B]�B
+     * フィールドの説明: [属性のローカル名。]。
      *
-     * @return �t�B�[���h[localName]����擾�����l�B
+     * @return フィールド[localName]から取得した値。
      */
     public String getLocalName() {
         return fLocalName;
     }
 
     /**
-     * �t�B�[���h [qName] �̒l��ݒ肵�܂��B
+     * フィールド [qName] の値を設定します。
      *
-     * �t�B�[���h�̐���: [������ XML 1.0 �C�����B]�B
+     * フィールドの説明: [属性の XML 1.0 修飾名。]。
      *
-     * @param argQName �t�B�[���h[qName]�ɐݒ肷��l�B
+     * @param argQName フィールド[qName]に設定する値。
      */
     public void setQName(final String argQName) {
         fQName = argQName;
     }
 
     /**
-     * �t�B�[���h [qName] �̒l���擾���܂��B
+     * フィールド [qName] の値を取得します。
      *
-     * �t�B�[���h�̐���: [������ XML 1.0 �C�����B]�B
+     * フィールドの説明: [属性の XML 1.0 修飾名。]。
      *
-     * @return �t�B�[���h[qName]����擾�����l�B
+     * @return フィールド[qName]から取得した値。
      */
     public String getQName() {
         return fQName;
     }
 
     /**
-     * �t�B�[���h [type] �̒l��ݒ肵�܂��B
+     * フィールド [type] の値を設定します。
      *
-     * �t�B�[���h�̐���: [�����̌^�B"CDATA", "ID", "IDREF", "IDREFS", "NMTOKEN", "NMTOKENS", "ENTITY", "ENTITIES", "NOTATION" ���i�[����܂��B]�B
+     * フィールドの説明: [属性の型。"CDATA", "ID", "IDREF", "IDREFS", "NMTOKEN", "NMTOKENS", "ENTITY", "ENTITIES", "NOTATION" が格納されます。]。
      *
-     * @param argType �t�B�[���h[type]�ɐݒ肷��l�B
+     * @param argType フィールド[type]に設定する値。
      */
     public void setType(final String argType) {
         fType = argType;
     }
 
     /**
-     * �t�B�[���h [type] �̒l���擾���܂��B
+     * フィールド [type] の値を取得します。
      *
-     * �t�B�[���h�̐���: [�����̌^�B"CDATA", "ID", "IDREF", "IDREFS", "NMTOKEN", "NMTOKENS", "ENTITY", "ENTITIES", "NOTATION" ���i�[����܂��B]�B
+     * フィールドの説明: [属性の型。"CDATA", "ID", "IDREF", "IDREFS", "NMTOKEN", "NMTOKENS", "ENTITY", "ENTITIES", "NOTATION" が格納されます。]。
      *
-     * @return �t�B�[���h[type]����擾�����l�B
+     * @return フィールド[type]から取得した値。
      */
     public String getType() {
         return fType;
     }
 
     /**
-     * �t�B�[���h [value] �̒l��ݒ肵�܂��B
+     * フィールド [value] の値を設定します。
      *
-     * �t�B�[���h�̐���: [�����̒l�B]�B
+     * フィールドの説明: [属性の値。]。
      *
-     * @param argValue �t�B�[���h[value]�ɐݒ肷��l�B
+     * @param argValue フィールド[value]に設定する値。
      */
     public void setValue(final String argValue) {
         fValue = argValue;
     }
 
     /**
-     * �t�B�[���h [value] �̒l���擾���܂��B
+     * フィールド [value] の値を取得します。
      *
-     * �t�B�[���h�̐���: [�����̒l�B]�B
+     * フィールドの説明: [属性の値。]。
      *
-     * @return �t�B�[���h[value]����擾�����l�B
+     * @return フィールド[value]から取得した値。
      */
     public String getValue() {
         return fValue;
     }
 
     /**
-     * ���̃o�����[�I�u�W�F�N�g�̕�����\�����擾���܂��B
+     * このバリューオブジェクトの文字列表現を取得します。
      *
-     * <P>�g�p��̒���</P>
+     * <P>使用上の注意</P>
      * <UL>
-     * <LI>�I�u�W�F�N�g�̃V�����[�͈͂̂ݕ����񉻂̏����ΏۂƂȂ�܂��B
-     * <LI>�I�u�W�F�N�g���z�Q�Ƃ��Ă���ꍇ�ɂ́A���̃��\�b�h�͎g��Ȃ��ł��������B
+     * <LI>オブジェクトのシャロー範囲のみ文字列化の処理対象となります。
+     * <LI>オブジェクトが循環参照している場合には、このメソッドは使わないでください。
      * </UL>
      *
-     * @return �o�����[�I�u�W�F�N�g�̕�����\���B
+     * @return バリューオブジェクトの文字列表現。
      */
     @Override
     public String toString() {

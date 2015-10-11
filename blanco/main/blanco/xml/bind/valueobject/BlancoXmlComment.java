@@ -1,51 +1,51 @@
 /*
- * ���̃\�[�X�R�[�h�� blanco Framework�ɂ�莩����������܂����B
+ * このソースコードは blanco Frameworkにより自動生成されました。
  */
 package blanco.xml.bind.valueobject;
 
 /**
- * SAX�C�x���g�̂��� �R�����g���L�����܂��B���̃N���X�� XML/�o�����[�I�u�W�F�N�g�}�b�s���O (X/O�}�b�s���O) blancoXmlBinding �̈ꕔ�ł��B
+ * SAXイベントのうち コメントを記憶します。このクラスは XML/バリューオブジェクトマッピング (X/Oマッピング) blancoXmlBinding の一部です。
  */
 public class BlancoXmlComment extends BlancoXmlNode {
     /**
-     * �R�����g�f�[�^�B
+     * コメントデータ。
      *
-     * �t�B�[���h: [value]�B
+     * フィールド: [value]。
      */
     private String fValue;
 
     /**
-     * �t�B�[���h [value] �̒l��ݒ肵�܂��B
+     * フィールド [value] の値を設定します。
      *
-     * �t�B�[���h�̐���: [�R�����g�f�[�^�B]�B
+     * フィールドの説明: [コメントデータ。]。
      *
-     * @param argValue �t�B�[���h[value]�ɐݒ肷��l�B
+     * @param argValue フィールド[value]に設定する値。
      */
     public void setValue(final String argValue) {
         fValue = argValue;
     }
 
     /**
-     * �t�B�[���h [value] �̒l���擾���܂��B
+     * フィールド [value] の値を取得します。
      *
-     * �t�B�[���h�̐���: [�R�����g�f�[�^�B]�B
+     * フィールドの説明: [コメントデータ。]。
      *
-     * @return �t�B�[���h[value]����擾�����l�B
+     * @return フィールド[value]から取得した値。
      */
     public String getValue() {
         return fValue;
     }
 
     /**
-     * ���̃o�����[�I�u�W�F�N�g�̕�����\�����擾���܂��B
+     * このバリューオブジェクトの文字列表現を取得します。
      *
-     * <P>�g�p��̒���</P>
+     * <P>使用上の注意</P>
      * <UL>
-     * <LI>�I�u�W�F�N�g�̃V�����[�͈͂̂ݕ����񉻂̏����ΏۂƂȂ�܂��B
-     * <LI>�I�u�W�F�N�g���z�Q�Ƃ��Ă���ꍇ�ɂ́A���̃��\�b�h�͎g��Ȃ��ł��������B
+     * <LI>オブジェクトのシャロー範囲のみ文字列化の処理対象となります。
+     * <LI>オブジェクトが循環参照している場合には、このメソッドは使わないでください。
      * </UL>
      *
-     * @return �o�����[�I�u�W�F�N�g�̕�����\���B
+     * @return バリューオブジェクトの文字列表現。
      */
     @Override
     public String toString() {

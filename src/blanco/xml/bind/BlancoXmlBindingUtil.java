@@ -30,25 +30,25 @@ import blanco.xml.bind.valueobject.BlancoXmlElement;
 import blanco.xml.bind.valueobject.BlancoXmlNode;
 
 /**
- * blancoXmlBinding �̃o�����[�I�u�W�F�N�g�\���ɑ΂��鑀��x�����[�e�B���e�B�ł��B
+ * blancoXmlBinding のバリューオブジェクト表現に対する操作支援ユーティリティです。
  * 
  * @author IGA Tosiki
  */
 public class BlancoXmlBindingUtil {
     /**
-     * ���̃N���X�̓C���X�^���X���͂��܂���B
+     * このクラスはインスタンス化はしません。
      */
     protected BlancoXmlBindingUtil() {
     }
 
     /**
-     * �^����ꂽ�h�L�������g����G�������g���擾���܂��B
+     * 与えられたドキュメントからエレメントを取得します。
      * 
-     * �ŏ��Ɍ��������G�������g��߂��܂��B
+     * 最初に見つかったエレメントを戻します。
      * 
      * @param argDocument
-     *            �����ΏۂƂȂ�h�L�������g�B
-     * @return (�ŏ��Ɍ�������)�G�������g�B�G�������g��������Ȃ������ꍇ�ɂ�null���߂�܂��B
+     *            検索対象となるドキュメント。
+     * @return (最初に見つかった)エレメント。エレメントが見つからなかった場合にはnullが戻ります。
      */
     public static final BlancoXmlElement getDocumentElement(
             final BlancoXmlDocument argDocument) {
@@ -62,26 +62,26 @@ public class BlancoXmlBindingUtil {
             return (BlancoXmlElement) objLook;
         }
 
-        // �ЂƂ�������܂���ł����B
+        // ひとつも見つかりませんでした。
         return null;
     }
 
     /**
-     * �^����ꂽ�G�������g�̎q�m�[�h����G�������g���擾���܂��B
+     * 与えられたエレメントの子ノードからエレメントを取得します。
      * 
-     * �����ɍ��v�����S�ẴG�������g��߂��܂��B
+     * 検索に合致した全てのエレメントを戻します。
      * 
      * @param argElement
-     *            �����ΏۂƂȂ�G�������g�B
+     *            検索対象となるエレメント。
      * @param argTagname
-     *            �����������^�O���B(���[�J����)
-     * @return ���������G�������g�̃��X�g�B�G�������g��������Ȃ������ꍇ�ɂ͋��List���߂�܂��B
+     *            検索したいタグ名。(ローカル名)
+     * @return 見つかったエレメントのリスト。エレメントが見つからなかった場合には空のListが戻ります。
      */
     public static final List<blanco.xml.bind.valueobject.BlancoXmlElement> getElementsByTagName(
             final BlancoXmlElement argElement, final String argTagname) {
         if (argElement == null) {
             throw new IllegalArgumentException(
-                    "BlancoXmlBindingUtil.getElementsByTagName: ����(�G�������g)��null���^�����܂����B");
+                    "BlancoXmlBindingUtil.getElementsByTagName: 引数(エレメント)にnullが与えられました。");
         }
 
         final List<blanco.xml.bind.valueobject.BlancoXmlElement> listResult = new ArrayList<blanco.xml.bind.valueobject.BlancoXmlElement>();
@@ -104,15 +104,15 @@ public class BlancoXmlBindingUtil {
     }
 
     /**
-     * �^����ꂽ�G�������g�̎q�m�[�h����G�������g���擾���܂��B
+     * 与えられたエレメントの子ノードからエレメントを取得します。
      * 
-     * �ŏ��Ɍ��������G�������g��߂��܂��B�����̃G�������g�����v�����Ƃ��Ă��Q�ڈȍ~�͖�������܂��B
+     * 最初に見つかったエレメントを戻します。複数のエレメントが合致したとしても２つ目以降は無視されます。
      * 
      * @param argElement
-     *            �����ΏۂƂȂ�G�������g�B
+     *            検索対象となるエレメント。
      * @param argTagname
-     *            �����������^�O���B(���[�J����)
-     * @return �ŏ��Ɍ��������G�������g�B�G�������g��������Ȃ������ꍇ�ɂ�null���߂�܂��B
+     *            検索したいタグ名。(ローカル名)
+     * @return 最初に見つかったエレメント。エレメントが見つからなかった場合にはnullが戻ります。
      */
     public static final BlancoXmlElement getElement(
             final BlancoXmlElement argElement, final String argTagname) {
@@ -130,23 +130,23 @@ public class BlancoXmlBindingUtil {
             }
         }
 
-        // �ЂƂ�������܂���ł����B
+        // ひとつも見つかりませんでした。
         return null;
     }
 
     /**
-     * �I�����ꂽ�m�[�h(�G�������g�ł���)���當������擾���܂��B
+     * 選択されたノード(エレメントでも可)から文字列を取得します。
      * 
-     * ����m�[�h�ɂԂ炳�����Ă���S�Ẵe�L�X�g�f�[�^���擾����ꍇ�ɗ��p���܂��B
+     * あるノードにぶらさがっている全てのテキストデータを取得する場合に利用します。
      * 
      * @param argElement
-     *            �ΏۂƂ���^�[�Q�b�g�G�������g
-     * @return �擾���ꂽ�e�L�X�g������B�擾����Ȃ������ꍇ�ɂ�null���߂�܂��B
+     *            対象とするターゲットエレメント
+     * @return 取得されたテキスト文字列。取得されなかった場合にはnullが戻ります。
      */
     public static final String getTextContent(final BlancoXmlElement argElement) {
         if (argElement == null) {
             throw new IllegalArgumentException(
-                    "�m�[�h����e�L�X�g���擾���郁�\�b�h��null���^�����܂����Bnull�ȊO�̒l��^����悤�ɂ��Ă��������B");
+                    "ノードからテキストを取得するメソッドにnullが与えられました。null以外の値を与えるようにしてください。");
         }
 
         final StringBuffer result = new StringBuffer();
@@ -166,7 +166,7 @@ public class BlancoXmlBindingUtil {
                 result.append(getTextContent(cdataLook));
                 isProcessed = true;
             }
-            // BlancoXmlIgnorableWhitespace �͏����Ώۂ���͂����܂��B
+            // BlancoXmlIgnorableWhitespace は処理対象からはずします。
         }
 
         if (isProcessed == false) {
@@ -177,23 +177,23 @@ public class BlancoXmlBindingUtil {
     }
 
     /**
-     * �G�������g����w��̃^�O���̕������ǂݍ��݂܂��B
+     * エレメントから指定のタグ名の文字列を読み込みます。
      * 
      * @param elementTarget
-     *            �ΏۂƂ���^�[�Q�b�g�G�������g
+     *            対象とするターゲットエレメント
      * @param tagName
-     *            �^�O��
-     * @return �擾���ꂽ�e�L�X�g������B�擾����Ȃ������ꍇ�ɂ�null���߂�܂��B
+     *            タグ名
+     * @return 取得されたテキスト文字列。取得されなかった場合にはnullが戻ります。
      */
     public static final String getTextContent(
             final BlancoXmlElement elementTarget, final String tagName) {
         if (elementTarget == null) {
             throw new IllegalArgumentException(
-                    "�G�������g����e�L�X�g���擾���郁�\�b�h�ɃG�������g�Ƃ���null���^�����܂����Bnull�ȊO�̒l��^����悤�ɂ��Ă��������B");
+                    "エレメントからテキストを取得するメソッドにエレメントとしてnullが与えられました。null以外の値を与えるようにしてください。");
         }
         if (tagName == null) {
             throw new IllegalArgumentException(
-                    "�G�������g����e�L�X�g���擾���郁�\�b�h�Ƀ^�O���Ƃ���null���^�����܂����Bnull�ȊO�̒l��^����悤�ɂ��Ă��������B");
+                    "エレメントからテキストを取得するメソッドにタグ名としてnullが与えられました。null以外の値を与えるようにしてください。");
         }
 
         final StringBuffer result = new StringBuffer();
@@ -221,7 +221,7 @@ public class BlancoXmlBindingUtil {
                         result.append(getTextContent(cdataLook));
                         isProcessed = true;
                     }
-                    // BlancoXmlIgnorableWhitespace �͏����Ώۂ���͂����܂��B
+                    // BlancoXmlIgnorableWhitespace は処理対象からはずします。
                 }
             }
         }
@@ -234,16 +234,16 @@ public class BlancoXmlBindingUtil {
     }
 
     /**
-     * �^����ꂽ CDATA ����e�L�X�g��ǂݏo���܂��B
+     * 与えられた CDATA からテキストを読み出します。
      * 
      * @param argCdata
-     *            CDATA�B
-     * @return �e�L�X�g�B
+     *            CDATA。
+     * @return テキスト。
      */
     public static final String getTextContent(final BlancoXmlCdata argCdata) {
         if (argCdata == null) {
             throw new IllegalArgumentException(
-                    "CDATA����e�L�X�g���擾���郁�\�b�h��null���^�����܂����Bnull�ȊO�̒l��^����悤�ɂ��Ă��������B");
+                    "CDATAからテキストを取得するメソッドにnullが与えられました。null以外の値を与えるようにしてください。");
         }
 
         final StringBuffer result = new StringBuffer();
@@ -266,7 +266,7 @@ public class BlancoXmlBindingUtil {
                 }
                 isProcessed = true;
             }
-            // BlancoXmlIgnorableWhitespace �͏����Ώۂ���͂����܂��B
+            // BlancoXmlIgnorableWhitespace は処理対象からはずします。
         }
 
         if (isProcessed == false) {
@@ -277,13 +277,13 @@ public class BlancoXmlBindingUtil {
     }
 
     /**
-     * �G�������g����^����ꂽQName�ɂ��A�g���r���[�g�l���擾���܂��B
+     * エレメントから与えられたQNameによるアトリビュート値を取得します。
      * 
      * @param argElement
-     *            �G�������g�B
+     *            エレメント。
      * @param argQName
-     *            ���O�B
-     * @return �A�g���r���[�g�l�B
+     *            名前。
+     * @return アトリビュート値。
      */
     public static final String getAttribute(final BlancoXmlElement argElement,
             final String argQName) {
@@ -294,7 +294,7 @@ public class BlancoXmlBindingUtil {
             }
         }
 
-        // �����ł��܂���ł����B
+        // 発見できませんでした。
         return null;
     }
 }

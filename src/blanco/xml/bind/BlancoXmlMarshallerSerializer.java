@@ -37,43 +37,43 @@ import blanco.xml.bind.valueobject.BlancoXmlNode;
 import blanco.xml.bind.valueobject.BlancoXmlPrefixMapping;
 
 /**
- * blancoXmlBinding ‚ÌƒoƒŠƒ…[ƒIƒuƒWƒFƒNƒg•\Œ»‚©‚ç XML ‚ğ¶¬‚·‚é‚½‚ß‚ÌƒVƒŠƒAƒ‰ƒCƒUÀ‘•‚Å‚·B
+ * blancoXmlBinding ã®ãƒãƒªãƒ¥ãƒ¼ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆè¡¨ç¾ã‹ã‚‰ XML ã‚’ç”Ÿæˆã™ã‚‹ãŸã‚ã®ã‚·ãƒªã‚¢ãƒ©ã‚¤ã‚¶å®Ÿè£…ã§ã™ã€‚
  * 
- * ‚±‚ÌƒNƒ‰ƒX‚Í XML/ƒoƒŠƒ…[ƒIƒuƒWƒFƒNƒgƒ}ƒbƒsƒ“ƒO (X/Oƒ}ƒbƒsƒ“ƒO) blancoXmlBinding ‚Ìˆê•”‚Å‚·B
+ * ã“ã®ã‚¯ãƒ©ã‚¹ã¯ XML/ãƒãƒªãƒ¥ãƒ¼ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãƒãƒƒãƒ”ãƒ³ã‚° (X/Oãƒãƒƒãƒ”ãƒ³ã‚°) blancoXmlBinding ã®ä¸€éƒ¨ã§ã™ã€‚
  * 
  * @author IGA Tosiki
  */
 public class BlancoXmlMarshallerSerializer {
     /**
-     * “à•”“I‚É—˜—p‚·‚éo—Í—pSAXƒnƒ“ƒhƒ‰<br>
-     * ˜AŒ‹æ‚ÌƒXƒgƒŠ[ƒ€‚ÍŠO•”‚Åclose‚³‚ê‚é•K—v‚ª‚ ‚è‚Ü‚·B
+     * å†…éƒ¨çš„ã«åˆ©ç”¨ã™ã‚‹å‡ºåŠ›ç”¨SAXãƒãƒ³ãƒ‰ãƒ©<br>
+     * é€£çµå…ˆã®ã‚¹ãƒˆãƒªãƒ¼ãƒ ã¯å¤–éƒ¨ã§closeã•ã‚Œã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ã€‚
      */
     private TransformerHandler fSaxHandler;
 
     /**
-     * SAXƒVƒŠƒAƒ‰ƒCƒU‚ğ—p‚¢‚½’¼—ñ‰»ƒNƒ‰ƒX‚ğ¶¬‚µ‚Ü‚·B
+     * SAXã‚·ãƒªã‚¢ãƒ©ã‚¤ã‚¶ã‚’ç”¨ã„ãŸç›´åˆ—åŒ–ã‚¯ãƒ©ã‚¹ã‚’ç”Ÿæˆã—ã¾ã™ã€‚
      * 
      * @param argHandler
-     *            SAXƒVƒŠƒAƒ‰ƒCƒU‚Ìƒnƒ“ƒhƒ‰B
+     *            SAXã‚·ãƒªã‚¢ãƒ©ã‚¤ã‚¶ã®ãƒãƒ³ãƒ‰ãƒ©ã€‚
      */
     public BlancoXmlMarshallerSerializer(final TransformerHandler argHandler) {
         fSaxHandler = argHandler;
     }
 
     /**
-     * —^‚¦‚ç‚ê‚½Document‚ğSAXƒVƒŠƒAƒ‰ƒCƒU‚Ö‚Æ“WŠJ‚µ‚Ü‚·B
+     * ä¸ãˆã‚‰ã‚ŒãŸDocumentã‚’SAXã‚·ãƒªã‚¢ãƒ©ã‚¤ã‚¶ã¸ã¨å±•é–‹ã—ã¾ã™ã€‚
      * 
      * @param document
-     *            ƒhƒLƒ…ƒƒ“ƒgƒIƒuƒWƒFƒNƒgB
+     *            ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã€‚
      * @throws SAXException
-     *             SAX—áŠO‚ª”­¶‚µ‚½ê‡B
+     *             SAXä¾‹å¤–ãŒç™ºç”Ÿã—ãŸå ´åˆã€‚
      */
     public void serialize(final BlancoXmlDocument document) throws SAXException {
         expandLocator(document);
 
         fSaxHandler.startDocument();
 
-        // ƒvƒŒƒtƒBƒbƒNƒXEƒ}ƒbƒsƒ“ƒO‚ğ“WŠJB
+        // ãƒ—ãƒ¬ãƒ•ã‚£ãƒƒã‚¯ã‚¹ãƒ»ãƒãƒƒãƒ”ãƒ³ã‚°ã‚’å±•é–‹ã€‚
         for (final BlancoXmlPrefixMapping prefixMapping : document
                 .getPrefixMappings()) {
             fSaxHandler.startPrefixMapping(BlancoStringUtil
@@ -83,8 +83,8 @@ public class BlancoXmlMarshallerSerializer {
                     .null2Blank(prefixMapping.getPrefix()));
         }
 
-        // Å‰‚Ì‰üsB
-        // ƒ|ƒCƒ“ƒg: ƒ[ƒJƒ‹ƒVƒXƒeƒ€‚Ì‰üsƒR[ƒh‚É‚æ‚ç‚¸‚ÉA\n ‚ğo—Í‚µ‚Ü‚·B
+        // æœ€åˆã®æ”¹è¡Œã€‚
+        // ãƒã‚¤ãƒ³ãƒˆ: ãƒ­ãƒ¼ã‚«ãƒ«ã‚·ã‚¹ãƒ†ãƒ ã®æ”¹è¡Œã‚³ãƒ¼ãƒ‰ã«ã‚ˆã‚‰ãšã«ã€\n ã‚’å‡ºåŠ›ã—ã¾ã™ã€‚
         fSaxHandler.characters("\n".toCharArray(), 0, 1);
 
         final int sizeChildNodes = document.getChildNodes().size();
@@ -96,7 +96,7 @@ public class BlancoXmlMarshallerSerializer {
                 expandElement((BlancoXmlElement) objLook);
             } else {
                 throw new IllegalArgumentException(
-                        "BlancoXmlMarshallerSerializer: ‘z’è‚µ‚È‚¢‰ÓŠ‚ğ’Ê‰ß‚µ‚Ü‚µ‚½B");
+                        "BlancoXmlMarshallerSerializer: æƒ³å®šã—ãªã„ç®‡æ‰€ã‚’é€šéã—ã¾ã—ãŸã€‚");
             }
         }
 
@@ -104,21 +104,21 @@ public class BlancoXmlMarshallerSerializer {
     }
 
     /**
-     * ƒƒP[ƒ^‚ğ“WŠJ‚µ‚Ü‚·B
+     * ãƒ­ã‚±ãƒ¼ã‚¿ã‚’å±•é–‹ã—ã¾ã™ã€‚
      * 
      * @param document
-     *            ƒhƒLƒ…ƒƒ“ƒgƒIƒuƒWƒFƒNƒgB
+     *            ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã€‚
      */
     private void expandLocator(final BlancoXmlDocument document) {
         if (document.getLocator() != null) {
             fSaxHandler.setDocumentLocator(new Locator() {
                 public String getPublicId() {
-                    // Locator‚ÌŠeƒƒ\ƒbƒh‚Ínull‚ğ–ß‚·‰Â”\«‚ª‚ ‚è‚Ü‚·B
+                    // Locatorã®å„ãƒ¡ã‚½ãƒƒãƒ‰ã¯nullã‚’æˆ»ã™å¯èƒ½æ€§ãŒã‚ã‚Šã¾ã™ã€‚
                     return document.getLocator().getPublicId();
                 }
 
                 public String getSystemId() {
-                    // Locator‚ÌŠeƒƒ\ƒbƒh‚Ínull‚ğ–ß‚·‰Â”\«‚ª‚ ‚è‚Ü‚·B
+                    // Locatorã®å„ãƒ¡ã‚½ãƒƒãƒ‰ã¯nullã‚’æˆ»ã™å¯èƒ½æ€§ãŒã‚ã‚Šã¾ã™ã€‚
                     return document.getLocator().getSystemId();
                 }
 
@@ -134,12 +134,12 @@ public class BlancoXmlMarshallerSerializer {
     }
 
     /**
-     * DTD‚ğ“WŠJ‚µ‚Ü‚·B
+     * DTDã‚’å±•é–‹ã—ã¾ã™ã€‚
      * 
      * @param argDtd
-     *            DTDî•ñB
+     *            DTDæƒ…å ±ã€‚
      * @throws SAXException
-     *             SAX—áŠO‚ª”­¶‚µ‚½ê‡B
+     *             SAXä¾‹å¤–ãŒç™ºç”Ÿã—ãŸå ´åˆã€‚
      */
     private void expandDtd(final BlancoXmlDtd argDtd) throws SAXException {
         fSaxHandler.startDTD(argDtd.getName(), argDtd.getPublicId(), argDtd
@@ -148,28 +148,28 @@ public class BlancoXmlMarshallerSerializer {
     }
 
     /**
-     * ƒGƒŒƒƒ“ƒg‚ğ“WŠJ‚µ‚Ü‚·B
+     * ã‚¨ãƒ¬ãƒ¡ãƒ³ãƒˆã‚’å±•é–‹ã—ã¾ã™ã€‚
      * 
      * @param element
-     *            ƒGƒŒƒƒ“ƒgB
+     *            ã‚¨ãƒ¬ãƒ¡ãƒ³ãƒˆã€‚
      * @throws SAXException
-     *             SAX—áŠO‚ª”­¶‚µ‚½ê‡B
+     *             SAXä¾‹å¤–ãŒç™ºç”Ÿã—ãŸå ´åˆã€‚
      */
     private void expandElement(final BlancoXmlElement element)
             throws SAXException {
         if (BlancoStringUtil.null2Blank(element.getLocalName()).length() == 0
                 && BlancoStringUtil.null2Blank(element.getQName()).length() == 0) {
             throw new IllegalArgumentException(
-                    "localName‚àQName‚àw’è‚³‚ê‚Ä‚¢‚È‚¢Element‚ª‚ ‚è‚Ü‚·Bˆ—’†’f‚µ‚Ü‚·B");
+                    "localNameã‚‚QNameã‚‚æŒ‡å®šã•ã‚Œã¦ã„ãªã„ElementãŒã‚ã‚Šã¾ã™ã€‚å‡¦ç†ä¸­æ–­ã—ã¾ã™ã€‚");
         }
 
         String qName = element.getQName();
         if (BlancoStringUtil.null2Blank(qName).length() == 0) {
-            // QName‚É‰½‚àw’è‚³‚ê‚Ä‚¢‚È‚¢ê‡‚É‚ÍlocalName‚Ì’l‚ğƒZƒbƒg‚µ‚Ü‚·B
+            // QNameã«ä½•ã‚‚æŒ‡å®šã•ã‚Œã¦ã„ãªã„å ´åˆã«ã¯localNameã®å€¤ã‚’ã‚»ãƒƒãƒˆã—ã¾ã™ã€‚
             qName = element.getLocalName();
         }
 
-        // ƒAƒgƒŠƒrƒ…[ƒg‚É‚Â‚¢‚Ä‚à QName‚ª–³w’è‚Ìê‡‚É‚Í localName‚ğ•¡Ê‚·‚é‚È‚Çnull‘Îô‚ğ‚Ù‚Ç‚±‚µ‚Ü‚·B
+        // ã‚¢ãƒˆãƒªãƒ“ãƒ¥ãƒ¼ãƒˆã«ã¤ã„ã¦ã‚‚ QNameãŒç„¡æŒ‡å®šã®å ´åˆã«ã¯ localNameã‚’è¤‡å†™ã™ã‚‹ãªã©nullå¯¾ç­–ã‚’ã»ã©ã“ã—ã¾ã™ã€‚
         for (int index = 0; index < element.getAtts().size(); index++) {
             final BlancoXmlAttribute attrLook = (BlancoXmlAttribute) element
                     .getAtts().get(index);
@@ -179,23 +179,23 @@ public class BlancoXmlMarshallerSerializer {
             attrLook.setValue(BlancoStringUtil.null2Blank(attrLook.getValue()));
 
             if (BlancoStringUtil.null2Blank(attrLook.getQName()).length() == 0) {
-                // QName‚É‰½‚àw’è‚³‚ê‚Ä‚¢‚È‚¢ê‡‚É‚ÍlocalName‚Ì’l‚ğƒZƒbƒg‚µ‚Ü‚·B
+                // QNameã«ä½•ã‚‚æŒ‡å®šã•ã‚Œã¦ã„ãªã„å ´åˆã«ã¯localNameã®å€¤ã‚’ã‚»ãƒƒãƒˆã—ã¾ã™ã€‚
                 attrLook.setQName(attrLook.getLocalName());
             }
             if (attrLook.getQName().length() == 0) {
-                // ‚»‚ê‚Å‚àQName‚ªƒuƒ‰ƒ“ƒN‚Ìê‡B
+                // ãã‚Œã§ã‚‚QNameãŒãƒ–ãƒ©ãƒ³ã‚¯ã®å ´åˆã€‚
                 throw new IllegalArgumentException(
-                        "ƒAƒgƒŠƒrƒ…[ƒg‚ÌQName‚ªnull‚Ì‚Ü‚Ü—^‚¦‚ç‚ê‚Ü‚µ‚½BlocalName‚©‚ç‚à“±o‚Å‚«‚Ü‚¹‚ñ‚Å‚µ‚½B:"
+                        "ã‚¢ãƒˆãƒªãƒ“ãƒ¥ãƒ¼ãƒˆã®QNameãŒnullã®ã¾ã¾ä¸ãˆã‚‰ã‚Œã¾ã—ãŸã€‚localNameã‹ã‚‰ã‚‚å°å‡ºã§ãã¾ã›ã‚“ã§ã—ãŸã€‚:"
                                 + element.toString());
             }
         }
 
-        // w’è‚ª–³‚¢ê‡‚É‚Ínull‚Å‚Í‚È‚­‹ó‚Ì•¶š—ñ‚ğ“n‚·•K—v‚ª‚ ‚é“_‚É’ˆÓB
+        // æŒ‡å®šãŒç„¡ã„å ´åˆã«ã¯nullã§ã¯ãªãç©ºã®æ–‡å­—åˆ—ã‚’æ¸¡ã™å¿…è¦ãŒã‚ã‚‹ç‚¹ã«æ³¨æ„ã€‚
         fSaxHandler.startElement(BlancoStringUtil.null2Blank(element.getUri()),
                 BlancoStringUtil.null2Blank(element.getLocalName()), qName,
                 new BlancoXmlAttributesImpl(element.getAtts()));
 
-        // qƒm[ƒh‚ğ“WŠJ‚µ‚Ü‚·B
+        // å­ãƒãƒ¼ãƒ‰ã‚’å±•é–‹ã—ã¾ã™ã€‚
         final int sizeChildNodes = element.getChildNodes().size();
         for (int index = 0; index < sizeChildNodes; index++) {
             final BlancoXmlNode objLook = element.getChildNodes().get(index);
@@ -211,31 +211,31 @@ public class BlancoXmlMarshallerSerializer {
                 expandCdata((BlancoXmlCdata) objLook);
             } else {
                 throw new IllegalArgumentException(
-                        "BlancoXmlMarshallerSerializer: ‘z’è‚µ‚È‚¢‰ÓŠ‚ğ’Ê‰ß‚µ‚Ü‚µ‚½B");
+                        "BlancoXmlMarshallerSerializer: æƒ³å®šã—ãªã„ç®‡æ‰€ã‚’é€šéã—ã¾ã—ãŸã€‚");
             }
         }
 
-        // w’è‚ª–³‚¢ê‡‚É‚Ínull‚Å‚Í‚È‚­‹ó‚Ì•¶š—ñ‚ğ“n‚·•K—v‚ª‚ ‚é“_‚É’ˆÓB
+        // æŒ‡å®šãŒç„¡ã„å ´åˆã«ã¯nullã§ã¯ãªãç©ºã®æ–‡å­—åˆ—ã‚’æ¸¡ã™å¿…è¦ãŒã‚ã‚‹ç‚¹ã«æ³¨æ„ã€‚
         fSaxHandler.endElement(BlancoStringUtil.null2Blank(element.getUri()),
                 BlancoStringUtil.null2Blank(element.getLocalName()), qName);
     }
 
     /**
-     * •¶šƒf[ƒ^‚ğ“WŠJ‚µ‚Ü‚·B
+     * æ–‡å­—ãƒ‡ãƒ¼ã‚¿ã‚’å±•é–‹ã—ã¾ã™ã€‚
      * 
      * @param argCharacters
-     *            •¶šƒf[ƒ^B
+     *            æ–‡å­—ãƒ‡ãƒ¼ã‚¿ã€‚
      * @throws SAXException
-     *             SAX—áŠO‚ª”­¶‚µ‚½ê‡B
+     *             SAXä¾‹å¤–ãŒç™ºç”Ÿã—ãŸå ´åˆã€‚
      */
     private void expandCharacters(final BlancoXmlCharacters argCharacters)
             throws SAXException {
         if (argCharacters == null) {
             throw new IllegalArgumentException(
-                    "expandCharacters‚Ìˆø”‚Énull‚ª—^‚¦‚ç‚ê‚Ü‚µ‚½B");
+                    "expandCharactersã®å¼•æ•°ã«nullãŒä¸ãˆã‚‰ã‚Œã¾ã—ãŸã€‚");
         }
         if (argCharacters.getValue() == null) {
-            // null‚ªw’è‚³‚ê‚Ä‚¢‚éê‡‚É‚Í "" ‚ğ‘ã“ü‚µ‚Ä—áŠO‚ª”­¶‚µ‚È‚¢‚æ‚¤‚É‚µ‚Ü‚·B
+            // nullãŒæŒ‡å®šã•ã‚Œã¦ã„ã‚‹å ´åˆã«ã¯ "" ã‚’ä»£å…¥ã—ã¦ä¾‹å¤–ãŒç™ºç”Ÿã—ãªã„ã‚ˆã†ã«ã—ã¾ã™ã€‚
             argCharacters.setValue("");
         }
 
@@ -244,12 +244,12 @@ public class BlancoXmlMarshallerSerializer {
     }
 
     /**
-     * –³‹‰Â”\‚È‹ó”’ƒf[ƒ^‚ğ“WŠJ‚µ‚Ü‚·B
+     * ç„¡è¦–å¯èƒ½ãªç©ºç™½ãƒ‡ãƒ¼ã‚¿ã‚’å±•é–‹ã—ã¾ã™ã€‚
      * 
      * @param argIgnorableWhitespace
-     *            –³‹‰Â”\‚È‹ó”’ƒf[ƒ^B
+     *            ç„¡è¦–å¯èƒ½ãªç©ºç™½ãƒ‡ãƒ¼ã‚¿ã€‚
      * @throws SAXException
-     *             SAX—áŠO‚ª”­¶‚µ‚½ê‡B
+     *             SAXä¾‹å¤–ãŒç™ºç”Ÿã—ãŸå ´åˆã€‚
      */
     private void expandIgnorableWhitespace(
             final BlancoXmlIgnorableWhitespace argIgnorableWhitespace)
@@ -259,12 +259,12 @@ public class BlancoXmlMarshallerSerializer {
     }
 
     /**
-     * ƒRƒƒ“ƒg‚ğ“WŠJ‚µ‚Ü‚·B
+     * ã‚³ãƒ¡ãƒ³ãƒˆã‚’å±•é–‹ã—ã¾ã™ã€‚
      * 
      * @param argComment
-     *            ƒRƒƒ“ƒgƒIƒuƒWƒFƒNƒgB
+     *            ã‚³ãƒ¡ãƒ³ãƒˆã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã€‚
      * @throws SAXException
-     *             SAX—áŠO‚ª”­¶‚µ‚½ê‡B
+     *             SAXä¾‹å¤–ãŒç™ºç”Ÿã—ãŸå ´åˆã€‚
      */
     private void expandComment(final BlancoXmlComment argComment)
             throws SAXException {
@@ -273,17 +273,17 @@ public class BlancoXmlMarshallerSerializer {
     }
 
     /**
-     * CDATA‚ğ“WŠJ‚µ‚Ü‚·B
+     * CDATAã‚’å±•é–‹ã—ã¾ã™ã€‚
      * 
      * @param argCdata
-     *            CDATAƒIƒuƒWƒFƒNƒgB
+     *            CDATAã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã€‚
      * @throws SAXException
-     *             SAX—áŠO‚ª”­¶‚µ‚½ê‡B
+     *             SAXä¾‹å¤–ãŒç™ºç”Ÿã—ãŸå ´åˆã€‚
      */
     private void expandCdata(final BlancoXmlCdata argCdata) throws SAXException {
         fSaxHandler.startCDATA();
 
-        // qƒm[ƒh‚ğ“WŠJ‚µ‚Ü‚·B
+        // å­ãƒãƒ¼ãƒ‰ã‚’å±•é–‹ã—ã¾ã™ã€‚
         final int sizeChildNodes = argCdata.getChildNodes().size();
         for (int index = 0; index < sizeChildNodes; index++) {
             final BlancoXmlNode objLook = argCdata.getChildNodes().get(index);
@@ -297,7 +297,7 @@ public class BlancoXmlMarshallerSerializer {
                 expandComment((BlancoXmlComment) objLook);
             } else {
                 throw new IllegalArgumentException(
-                        "BlancoXmlMarshallerSerializer: ‘z’è‚µ‚È‚¢‰ÓŠ‚ğ’Ê‰ß‚µ‚Ü‚µ‚½B");
+                        "BlancoXmlMarshallerSerializer: æƒ³å®šã—ãªã„ç®‡æ‰€ã‚’é€šéã—ã¾ã—ãŸã€‚");
             }
         }
 

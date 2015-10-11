@@ -29,8 +29,8 @@ import blanco.xml.bind.valueobject.BlancoXmlElement;
 
 public class BlancoXmlMarshaller3Test extends TestCase {
     /**
-     * ŠÈ’P‚É‚µ‚½‚Æ‚±‚ë Eclipse 3.1.1‚ÌƒfƒtƒHƒ‹ƒg’l‚Å 80000Œ’ö“x‚ªŒÀŠEB<br>
-     * 2006.05.03 XMLƒtƒ@ƒCƒ‹‰»‚³‚ê‚½Û‚ÌƒTƒCƒY‚Í 6,617,914 ƒoƒCƒg (JDK 1.4.2ƒx[ƒX)
+     * ç°¡å˜ã«è©¦ã—ãŸã¨ã“ã‚ Eclipse 3.1.1ã®ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆå€¤ã§ 80000ä»¶ç¨‹åº¦ãŒé™ç•Œã€‚<br>
+     * 2006.05.03 XMLãƒ•ã‚¡ã‚¤ãƒ«åŒ–ã•ã‚ŒãŸéš›ã®ã‚µã‚¤ã‚ºã¯ 6,617,914 ãƒã‚¤ãƒˆ (JDK 1.4.2ãƒ™ãƒ¼ã‚¹)
      */
     private static final int COUNT = 80000;
 
@@ -46,7 +46,7 @@ public class BlancoXmlMarshaller3Test extends TestCase {
         final BlancoXmlAttribute attr = new BlancoXmlAttribute();
         element.getAtts().add(attr);
         attr.setQName("abc");
-        attr.setValue("‹‘åƒf[ƒ^‚ÌŒ±");
+        attr.setValue("å·¨å¤§ãƒ‡ãƒ¼ã‚¿ã®è©¦é¨“");
         attr.setType("CDATA");
 
         final BlancoXmlElement element2 = new BlancoXmlElement();
@@ -54,7 +54,7 @@ public class BlancoXmlMarshaller3Test extends TestCase {
         element2.setQName("ITEMS");
 
         final BlancoXmlCharacters characters = new BlancoXmlCharacters();
-        characters.setValue("‚±‚ê‚Í’l‚Å‚·B");
+        characters.setValue("ã“ã‚Œã¯å€¤ã§ã™ã€‚");
 
         element2.getChildNodes().add(characters);
 
@@ -69,29 +69,29 @@ public class BlancoXmlMarshaller3Test extends TestCase {
             attrChild.setValue("" + index);
 
             final BlancoXmlCharacters charactersChild = new BlancoXmlCharacters();
-            charactersChild.setValue("‘å—Êƒf[ƒ^‚Ì‚¤‚¿" + index + "”Ô–Ú‚Ìƒf[ƒ^‚Å‚·B");
+            charactersChild.setValue("å¤§é‡ãƒ‡ãƒ¼ã‚¿ã®ã†ã¡" + index + "ç•ªç›®ã®ãƒ‡ãƒ¼ã‚¿ã§ã™ã€‚");
             elementChild.getChildNodes().add(charactersChild);
         }
 
-        System.out.println("ƒf[ƒ^\‘¢\’zŠ®—¹B");
+        System.out.println("ãƒ‡ãƒ¼ã‚¿æ§‹é€ æ§‹ç¯‰å®Œäº†ã€‚");
 
         new File("./tmp").mkdirs();
         new BlancoXmlMarshaller().marshal(document, new File(
                 "./tmp/BlancoXmlMarshaller3Test.xml"));
 
-        System.out.println("ƒf[ƒ^\‘¢•Û‘¶Š®—¹B");
+        System.out.println("ãƒ‡ãƒ¼ã‚¿æ§‹é€ ä¿å­˜å®Œäº†ã€‚");
 
-        // ˆÈ‘O‚Ìî•ñ‚Í”jŠü‚µ‚Ü‚·B
+        // ä»¥å‰ã®æƒ…å ±ã¯ç ´æ£„ã—ã¾ã™ã€‚
         document = null;
 
-        // “Ç‚İ‚İ‚ÌÛ‚É‚ÍÚ×‚Èƒf[ƒ^‚ª•t—^‚³‚ê‚Ä‚¢‚é‚Ì‚ÅA
-        // ‘‚«‚İ‚ª‚Å‚«‚½‚Æ‚µ‚Ä‚à“Ç‚İ‚İ‚ª‚Å‚«‚È‚¢ê‡‚ª‚ ‚é“_‚É’ˆÓB
+        // èª­ã¿è¾¼ã¿ã®éš›ã«ã¯è©³ç´°ãªãƒ‡ãƒ¼ã‚¿ãŒä»˜ä¸ã•ã‚Œã¦ã„ã‚‹ã®ã§ã€
+        // æ›¸ãè¾¼ã¿ãŒã§ããŸã¨ã—ã¦ã‚‚èª­ã¿è¾¼ã¿ãŒã§ããªã„å ´åˆãŒã‚ã‚‹ç‚¹ã«æ³¨æ„ã€‚
 
         @SuppressWarnings("unused")
         final BlancoXmlDocument documentRead = new BlancoXmlUnmarshaller()
                 .unmarshal(new File("./tmp/BlancoXmlMarshaller3Test.xml"));
         // System.out.println(documentRead);
 
-        System.out.println("ƒf[ƒ^\‘¢“ÇŠ®—¹B");
+        System.out.println("ãƒ‡ãƒ¼ã‚¿æ§‹é€ èª­è¾¼å®Œäº†ã€‚");
     }
 }

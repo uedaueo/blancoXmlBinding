@@ -41,82 +41,82 @@ import blanco.xml.bind.valueobject.BlancoXmlNode;
 import blanco.xml.bind.valueobject.BlancoXmlPrefixMapping;
 
 /**
- * XML ‚©‚ç blancoXmlBinding ‚ÌƒoƒŠƒ…[ƒIƒuƒWƒFƒNƒg•\Œ»‚ğ¶¬‚·‚é‚½‚ß‚ÌƒRƒ“ƒeƒ“ƒcƒnƒ“ƒhƒ‰À‘•‚Å‚·B
+ * XML ã‹ã‚‰ blancoXmlBinding ã®ãƒãƒªãƒ¥ãƒ¼ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆè¡¨ç¾ã‚’ç”Ÿæˆã™ã‚‹ãŸã‚ã®ã‚³ãƒ³ãƒ†ãƒ³ãƒ„ãƒãƒ³ãƒ‰ãƒ©å®Ÿè£…ã§ã™ã€‚
  * 
- * ‚±‚ÌƒNƒ‰ƒX‚Í XML/ƒoƒŠƒ…[ƒIƒuƒWƒFƒNƒgƒ}ƒbƒsƒ“ƒO (X/Oƒ}ƒbƒsƒ“ƒO) blancoXmlBinding ‚Ìˆê•”‚Å‚·B
+ * ã“ã®ã‚¯ãƒ©ã‚¹ã¯ XML/ãƒãƒªãƒ¥ãƒ¼ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãƒãƒƒãƒ”ãƒ³ã‚° (X/Oãƒãƒƒãƒ”ãƒ³ã‚°) blancoXmlBinding ã®ä¸€éƒ¨ã§ã™ã€‚
  * 
- * javax.xml.transform.sax.TransformerHandler ‚Ì— •Ô‚µ‚É‚È‚è‚Ü‚·B
+ * javax.xml.transform.sax.TransformerHandler ã®è£è¿”ã—ã«ãªã‚Šã¾ã™ã€‚
  * 
  * @author IGA Tosiki
  */
 public class BlancoXmlUnmarshallerContentHandler implements ContentHandler,
         LexicalHandler, DTDHandler {
     /**
-     * ƒƒ‚ƒŠŒø—¦‚Ì‚½‚ß‚È‚Ç‚É•¶š—ñ‚ÌƒLƒƒƒbƒVƒ…‚È‚Ç‚ğÀŒ±‚µ‚Ü‚µ‚½‚ªA‚Ş‚µ‚ëˆ«‰»‚µ‚Ü‚µ‚½B<br>
-     * Œ»“_‚Å‚Í¬×H‚Í‚¹‚¸‚ÉAˆ—‚Ì‰ü‘P‚É’—Í‚·‚é‚±‚Æ‚Æ‚µ‚Ü‚·B
+     * ãƒ¡ãƒ¢ãƒªåŠ¹ç‡ã®ãŸã‚ãªã©ã«æ–‡å­—åˆ—ã®ã‚­ãƒ£ãƒƒã‚·ãƒ¥ãªã©ã‚’å®Ÿé¨“ã—ã¾ã—ãŸãŒã€ã‚€ã—ã‚æ‚ªåŒ–ã—ã¾ã—ãŸã€‚<br>
+     * ç¾æ™‚ç‚¹ã§ã¯å°ç´°å·¥ã¯ã›ãšã«ã€å‡¦ç†ã®æ”¹å–„ã«æ³¨åŠ›ã™ã‚‹ã“ã¨ã¨ã—ã¾ã™ã€‚
      * 
-     * Œø‰Ê‚Ì‚È‚©‚Á‚½À‘•‚ÍAˆÈ‰º‚Ì‚æ‚¤‚È Map‚ğ‚à‚¿‚¢‚½ •¶š—ñ‹¤—L‰»B // private Map<String, String>
+     * åŠ¹æœã®ãªã‹ã£ãŸå®Ÿè£…ã¯ã€ä»¥ä¸‹ã®ã‚ˆã†ãª Mapã‚’ã‚‚ã¡ã„ãŸ æ–‡å­—åˆ—å…±æœ‰åŒ–ã€‚ // private Map<String, String>
      * fStringMap = new HashMap<String, String>();
      */
 
     /**
-     * ƒ‹[ƒgƒhƒLƒ…ƒƒ“ƒg‚ğ‹L‰¯‚µ‚Ü‚·B
+     * ãƒ«ãƒ¼ãƒˆãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆã‚’è¨˜æ†¶ã—ã¾ã™ã€‚
      */
     protected final BlancoXmlDocument fDocument = new BlancoXmlDocument();
 
     /**
-     * Œ»İˆ—’†‚Ìƒ|ƒCƒ“ƒg‚ğ‹L‰¯‚µ‚Ü‚·B
+     * ç¾åœ¨å‡¦ç†ä¸­ã®ãƒã‚¤ãƒ³ãƒˆã‚’è¨˜æ†¶ã—ã¾ã™ã€‚
      */
     protected final Stack<BlancoXmlNode> fDocumentElementStack = new Stack<BlancoXmlNode>();
 
     /**
-     * ƒRƒ“ƒeƒ“ƒgƒnƒ“ƒhƒ‰ƒIƒuƒWƒFƒNƒg‚ğV‹Kì¬‚µ‚Ü‚·B
+     * ã‚³ãƒ³ãƒ†ãƒ³ãƒˆãƒãƒ³ãƒ‰ãƒ©ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’æ–°è¦ä½œæˆã—ã¾ã™ã€‚
      */
     public BlancoXmlUnmarshallerContentHandler() {
         fDocumentElementStack.push(fDocument);
     }
 
     /**
-     * ƒ‹[ƒgƒhƒLƒ…ƒƒ“ƒg‚ğæ“¾‚µ‚Ü‚·B
+     * ãƒ«ãƒ¼ãƒˆãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆã‚’å–å¾—ã—ã¾ã™ã€‚
      * 
-     * @return XML ƒhƒLƒ…ƒƒ“ƒgB
+     * @return XML ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆã€‚
      */
     public BlancoXmlDocument getDocument() {
         return fDocument;
     }
 
     // ------------------------------------------------
-    // ‚±‚±‚©‚ç‚Í ContentHandler ‚Ì‚½‚ß‚Ìƒƒ\ƒbƒhB
+    // ã“ã“ã‹ã‚‰ã¯ ContentHandler ã®ãŸã‚ã®ãƒ¡ã‚½ãƒƒãƒ‰ã€‚
     // ------------------------------------------------
 
     /**
-     * ContentHandler ‚ÌƒhƒLƒ…ƒƒ“ƒgŠJnƒCƒxƒ“ƒgB
+     * ContentHandler ã®ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆé–‹å§‹ã‚¤ãƒ™ãƒ³ãƒˆã€‚
      */
     public void startDocument() throws SAXException {
-        // Šù‚ÉpushÏ‚İ‚Å‚·B
+        // æ—¢ã«pushæ¸ˆã¿ã§ã™ã€‚
     }
 
     /**
-     * ContentHandler ‚ÌƒhƒLƒ…ƒƒ“ƒgI—¹ƒCƒxƒ“ƒgB
+     * ContentHandler ã®ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆçµ‚äº†ã‚¤ãƒ™ãƒ³ãƒˆã€‚
      */
     public void endDocument() throws SAXException {
         fDocumentElementStack.pop();
     }
 
     /**
-     * ContentHandler ‚ÌƒƒP[ƒ^ƒCƒxƒ“ƒgB
+     * ContentHandler ã®ãƒ­ã‚±ãƒ¼ã‚¿ã‚¤ãƒ™ãƒ³ãƒˆã€‚
      * 
      * @param argLocator
-     *            SAX ƒhƒLƒ…ƒƒ“ƒgƒCƒxƒ“ƒg‚ÌˆÊ’uB
+     *            SAX ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆã‚¤ãƒ™ãƒ³ãƒˆã®ä½ç½®ã€‚
      */
     public void setDocumentLocator(final Locator argLocator) {
         final BlancoXmlLocator locator = new BlancoXmlLocator();
 
-        // Œ»İˆ—’†‚ÌƒIƒuƒWƒFƒNƒg‚ğæ“¾‚µ‚Ü‚·B
+        // ç¾åœ¨å‡¦ç†ä¸­ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å–å¾—ã—ã¾ã™ã€‚
         final BlancoXmlNode objCurrent = fDocumentElementStack.peek();
         if (objCurrent instanceof BlancoXmlDocument == false) {
             throw new IllegalArgumentException(
-                    "BlancoXmlUnmarshallerContentHandler: Document‚Å‚Í‚È‚¢‚à‚Ì‚É‘Î‚µ‚Ä Locator‚ğƒZƒbƒg‚µ‚æ‚¤‚Æ‚µ‚Ü‚µ‚½B");
+                    "BlancoXmlUnmarshallerContentHandler: Documentã§ã¯ãªã„ã‚‚ã®ã«å¯¾ã—ã¦ Locatorã‚’ã‚»ãƒƒãƒˆã—ã‚ˆã†ã¨ã—ã¾ã—ãŸã€‚");
         }
 
         ((BlancoXmlDocument) objCurrent).setLocator(locator);
@@ -128,12 +128,12 @@ public class BlancoXmlUnmarshallerContentHandler implements ContentHandler,
     }
 
     /**
-     * ContentHandler ‚Ì PrefixMapping ŠJnƒCƒxƒ“ƒgB
+     * ContentHandler ã® PrefixMapping é–‹å§‹ã‚¤ãƒ™ãƒ³ãƒˆã€‚
      * 
      * @param prefix
-     *            –¼‘O‹óŠÔƒvƒŒƒtƒBƒbƒNƒXB
+     *            åå‰ç©ºé–“ãƒ—ãƒ¬ãƒ•ã‚£ãƒƒã‚¯ã‚¹ã€‚
      * @param uri
-     *            ƒvƒŒƒtƒBƒbƒNƒX‚ªƒ}ƒbƒv‚³‚ê‚½–¼‘O‹óŠÔ URIB
+     *            ãƒ—ãƒ¬ãƒ•ã‚£ãƒƒã‚¯ã‚¹ãŒãƒãƒƒãƒ—ã•ã‚ŒãŸåå‰ç©ºé–“ URIã€‚
      */
     public void startPrefixMapping(final String prefix, final String uri)
             throws SAXException {
@@ -141,45 +141,45 @@ public class BlancoXmlUnmarshallerContentHandler implements ContentHandler,
         prefixMapping.setPrefix(prefix);
         prefixMapping.setUri(uri);
 
-        // Œ»İˆ—’†‚ÌƒIƒuƒWƒFƒNƒg‚ğæ“¾‚µ‚Ü‚·B
+        // ç¾åœ¨å‡¦ç†ä¸­ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å–å¾—ã—ã¾ã™ã€‚
         final BlancoXmlNode objCurrent = fDocumentElementStack.peek();
         if (objCurrent instanceof BlancoXmlDocument) {
             ((BlancoXmlDocument) objCurrent).getPrefixMappings().add(
                     prefixMapping);
         } else if (objCurrent instanceof BlancoXmlElement) {
-            // —v‘f‚Ìê‡‚Ì startPrefixMapping ‚Í–³‹‚µ‚Ü‚·B
+            // è¦ç´ ã®å ´åˆã® startPrefixMapping ã¯ç„¡è¦–ã—ã¾ã™ã€‚
         } else {
             throw new IllegalArgumentException(
-                    "BlancoXmlUnmarshallerContentHandler: Document ‚Å‚à Element ‚Å‚à‚È‚¢‚à‚Ì‚É‘Î‚µ‚Ä prefixMapping ‚ğƒZƒbƒg‚µ‚æ‚¤‚Æ‚µ‚Ü‚µ‚½B");
+                    "BlancoXmlUnmarshallerContentHandler: Document ã§ã‚‚ Element ã§ã‚‚ãªã„ã‚‚ã®ã«å¯¾ã—ã¦ prefixMapping ã‚’ã‚»ãƒƒãƒˆã—ã‚ˆã†ã¨ã—ã¾ã—ãŸã€‚");
         }
     }
 
     /**
-     * ContentHandler ‚Ì PrefixMapping I—¹ƒCƒxƒ“ƒgB
+     * ContentHandler ã® PrefixMapping çµ‚äº†ã‚¤ãƒ™ãƒ³ãƒˆã€‚
      * 
      * @param prefix
-     *            –¼‘O‹óŠÔƒvƒŒƒtƒBƒbƒNƒXB
+     *            åå‰ç©ºé–“ãƒ—ãƒ¬ãƒ•ã‚£ãƒƒã‚¯ã‚¹ã€‚
      */
     public void endPrefixMapping(final String prefix) throws SAXException {
     }
 
     /**
-     * ContentHandler ‚Ì—v‘fŠJnƒCƒxƒ“ƒgB
+     * ContentHandler ã®è¦ç´ é–‹å§‹ã‚¤ãƒ™ãƒ³ãƒˆã€‚
      * 
      * @param uri
-     *            ƒvƒŒƒtƒBƒbƒNƒX‚ªƒ}ƒbƒv‚³‚ê‚½–¼‘O‹óŠÔ URIB
+     *            ãƒ—ãƒ¬ãƒ•ã‚£ãƒƒã‚¯ã‚¹ãŒãƒãƒƒãƒ—ã•ã‚ŒãŸåå‰ç©ºé–“ URIã€‚
      * @param localName
-     *            ƒ[ƒJƒ‹–¼B
+     *            ãƒ­ãƒ¼ã‚«ãƒ«åã€‚
      * @param qName
-     *            ƒvƒŒƒtƒBƒbƒNƒX•t‚«Cü–¼B
+     *            ãƒ—ãƒ¬ãƒ•ã‚£ãƒƒã‚¯ã‚¹ä»˜ãä¿®é£¾åã€‚
      * @param atts
-     *            ƒAƒgƒŠƒrƒ…[ƒgˆê——B
+     *            ã‚¢ãƒˆãƒªãƒ“ãƒ¥ãƒ¼ãƒˆä¸€è¦§ã€‚
      */
     public void startElement(final String uri, final String localName,
             final String qName, final Attributes atts) throws SAXException {
         final BlancoXmlElement element = new BlancoXmlElement();
 
-        // Œ»İˆ—’†‚ÌƒIƒuƒWƒFƒNƒg‚ğæ“¾‚µ‚Ü‚·B
+        // ç¾åœ¨å‡¦ç†ä¸­ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å–å¾—ã—ã¾ã™ã€‚
         final BlancoXmlNode objCurrent = fDocumentElementStack.peek();
         if (objCurrent instanceof BlancoXmlElement) {
             final BlancoXmlElement elementParent = ((BlancoXmlElement) objCurrent);
@@ -188,29 +188,29 @@ public class BlancoXmlUnmarshallerContentHandler implements ContentHandler,
             ((BlancoXmlDocument) objCurrent).getChildNodes().add(element);
         } else {
             throw new IllegalArgumentException(
-                    "BlancoXmlUnmarshallerContentHandler: ‘z’è‚³‚ê‚È‚¢Œ^["
+                    "BlancoXmlUnmarshallerContentHandler: æƒ³å®šã•ã‚Œãªã„å‹["
                             + objCurrent.getClass().getName()
-                            + "]‚É‘Î‚µ‚Ä Element‚ğ’Ç‰Á‚µ‚æ‚¤‚Æ‚µ‚Ü‚µ‚½B");
+                            + "]ã«å¯¾ã—ã¦ Elementã‚’è¿½åŠ ã—ã‚ˆã†ã¨ã—ã¾ã—ãŸã€‚");
         }
 
-        // ƒGƒŒƒƒ“ƒg‚ğƒRƒs[‚µ‚Ü‚·B
+        // ã‚¨ãƒ¬ãƒ¡ãƒ³ãƒˆã‚’ã‚³ãƒ”ãƒ¼ã—ã¾ã™ã€‚
         element.setUri(uri);
         element.setLocalName(localName);
         element.setQName(qName);
 
-        // ƒAƒgƒŠƒrƒ…[ƒg‚ÌƒRƒs[‚ğs‚¢‚Ü‚·B
+        // ã‚¢ãƒˆãƒªãƒ“ãƒ¥ãƒ¼ãƒˆã®ã‚³ãƒ”ãƒ¼ã‚’è¡Œã„ã¾ã™ã€‚
         copyAttributes(atts, element);
 
         fDocumentElementStack.push(element);
     }
 
     /**
-     * ƒAƒgƒŠƒrƒ…[ƒg‚ÌƒRƒs[‚ğs‚¢‚Ü‚·B
+     * ã‚¢ãƒˆãƒªãƒ“ãƒ¥ãƒ¼ãƒˆã®ã‚³ãƒ”ãƒ¼ã‚’è¡Œã„ã¾ã™ã€‚
      * 
      * @param atts
-     *            ƒAƒgƒŠƒrƒ…[ƒgˆê——B
+     *            ã‚¢ãƒˆãƒªãƒ“ãƒ¥ãƒ¼ãƒˆä¸€è¦§ã€‚
      * @param element
-     *            •¡Êæ‚ÌƒGƒŒƒƒ“ƒgB
+     *            è¤‡å†™å…ˆã®ã‚¨ãƒ¬ãƒ¡ãƒ³ãƒˆã€‚
      */
     protected void copyAttributes(final Attributes atts,
             final BlancoXmlElement element) {
@@ -228,14 +228,14 @@ public class BlancoXmlUnmarshallerContentHandler implements ContentHandler,
     }
 
     /**
-     * ContentHandler ‚Ì—v‘fI—¹ƒCƒxƒ“ƒgB
+     * ContentHandler ã®è¦ç´ çµ‚äº†ã‚¤ãƒ™ãƒ³ãƒˆã€‚
      * 
      * @param uri
-     *            ƒvƒŒƒtƒBƒbƒNƒX‚ªƒ}ƒbƒv‚³‚ê‚½–¼‘O‹óŠÔ URIB
+     *            ãƒ—ãƒ¬ãƒ•ã‚£ãƒƒã‚¯ã‚¹ãŒãƒãƒƒãƒ—ã•ã‚ŒãŸåå‰ç©ºé–“ URIã€‚
      * @param localName
-     *            ƒ[ƒJƒ‹–¼B
+     *            ãƒ­ãƒ¼ã‚«ãƒ«åã€‚
      * @param qName
-     *            ƒvƒŒƒtƒBƒbƒNƒX•t‚«Cü–¼B
+     *            ãƒ—ãƒ¬ãƒ•ã‚£ãƒƒã‚¯ã‚¹ä»˜ãä¿®é£¾åã€‚
      */
     public void endElement(final String uri, final String localName,
             final String qName) throws SAXException {
@@ -243,7 +243,7 @@ public class BlancoXmlUnmarshallerContentHandler implements ContentHandler,
     }
 
     /**
-     * ContentHandler ‚Ì•¶šƒCƒxƒ“ƒgB
+     * ContentHandler ã®æ–‡å­—ã‚¤ãƒ™ãƒ³ãƒˆã€‚
      * 
      * @param ch
      * @param start
@@ -253,7 +253,7 @@ public class BlancoXmlUnmarshallerContentHandler implements ContentHandler,
             throws SAXException {
         final BlancoXmlCharacters characters = new BlancoXmlCharacters();
 
-        // Œ»İˆ—’†‚ÌƒIƒuƒWƒFƒNƒg‚ğæ“¾‚µ‚Ü‚·B
+        // ç¾åœ¨å‡¦ç†ä¸­ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å–å¾—ã—ã¾ã™ã€‚
         final BlancoXmlNode objCurrent = fDocumentElementStack.peek();
         if (objCurrent instanceof BlancoXmlElement) {
             ((BlancoXmlElement) objCurrent).getChildNodes().add(characters);
@@ -263,16 +263,16 @@ public class BlancoXmlUnmarshallerContentHandler implements ContentHandler,
             ((BlancoXmlDocument) objCurrent).getChildNodes().add(characters);
         } else {
             throw new IllegalArgumentException(
-                    "BlancoXmlUnmarshallerContentHandler: ‘z’è‚³‚ê‚È‚¢Œ^["
+                    "BlancoXmlUnmarshallerContentHandler: æƒ³å®šã•ã‚Œãªã„å‹["
                             + objCurrent.getClass().getName()
-                            + "]‚É‘Î‚µ‚Ä Characters‚ğ’Ç‰Á‚µ‚æ‚¤‚Æ‚µ‚Ü‚µ‚½B");
+                            + "]ã«å¯¾ã—ã¦ Charactersã‚’è¿½åŠ ã—ã‚ˆã†ã¨ã—ã¾ã—ãŸã€‚");
         }
 
         characters.setValue(new String(ch, start, length));
     }
 
     /**
-     * ContentHandler ‚Ì–³‹‰Â”\•¶šƒCƒxƒ“ƒgB
+     * ContentHandler ã®ç„¡è¦–å¯èƒ½æ–‡å­—ã‚¤ãƒ™ãƒ³ãƒˆã€‚
      * 
      * @param ch
      * @param start
@@ -282,7 +282,7 @@ public class BlancoXmlUnmarshallerContentHandler implements ContentHandler,
             final int length) throws SAXException {
         final BlancoXmlIgnorableWhitespace ignorableWhitespace = new BlancoXmlIgnorableWhitespace();
 
-        // Œ»İˆ—’†‚ÌƒIƒuƒWƒFƒNƒg‚ğæ“¾‚µ‚Ü‚·B
+        // ç¾åœ¨å‡¦ç†ä¸­ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å–å¾—ã—ã¾ã™ã€‚
         final BlancoXmlNode objCurrent = fDocumentElementStack.peek();
         if (objCurrent instanceof BlancoXmlElement) {
             ((BlancoXmlElement) objCurrent).getChildNodes().add(
@@ -295,40 +295,40 @@ public class BlancoXmlUnmarshallerContentHandler implements ContentHandler,
                     ignorableWhitespace);
         } else {
             throw new IllegalArgumentException(
-                    "BlancoXmlUnmarshallerContentHandler: ‘z’è‚³‚ê‚È‚¢Œ^["
+                    "BlancoXmlUnmarshallerContentHandler: æƒ³å®šã•ã‚Œãªã„å‹["
                             + objCurrent.getClass().getName()
-                            + "]‚É‘Î‚µ‚Ä BlancoXmlIgnorableWhitespace‚ğ’Ç‰Á‚µ‚æ‚¤‚Æ‚µ‚Ü‚µ‚½B");
+                            + "]ã«å¯¾ã—ã¦ BlancoXmlIgnorableWhitespaceã‚’è¿½åŠ ã—ã‚ˆã†ã¨ã—ã¾ã—ãŸã€‚");
         }
 
         ignorableWhitespace.setValue(new String(ch, start, length));
     }
 
     /**
-     * ContentHandler ‚Ì processingInstruction ƒCƒxƒ“ƒgB
+     * ContentHandler ã® processingInstruction ã‚¤ãƒ™ãƒ³ãƒˆã€‚
      * 
      * @param target
      * @param data
      */
     public void processingInstruction(final String target, final String data)
             throws SAXException {
-        // ‚±‚ÌƒCƒxƒ“ƒg‚ÍŒ»“_‚Å‚Ìd—l‚Å‚Í–³‹‚µ‚Ü‚·B
+        // ã“ã®ã‚¤ãƒ™ãƒ³ãƒˆã¯ç¾æ™‚ç‚¹ã§ã®ä»•æ§˜ã§ã¯ç„¡è¦–ã—ã¾ã™ã€‚
     }
 
     /**
-     * ContentHandler ‚Ì skippedEntity ƒCƒxƒ“ƒgB
+     * ContentHandler ã® skippedEntity ã‚¤ãƒ™ãƒ³ãƒˆã€‚
      * 
      * @param name
      */
     public void skippedEntity(final String name) throws SAXException {
-        // ‚±‚ÌƒCƒxƒ“ƒg‚ÍŒ»“_‚Å‚Ìd—l‚Å‚Í–³‹‚µ‚Ü‚·B
+        // ã“ã®ã‚¤ãƒ™ãƒ³ãƒˆã¯ç¾æ™‚ç‚¹ã§ã®ä»•æ§˜ã§ã¯ç„¡è¦–ã—ã¾ã™ã€‚
     }
 
     // ------------------------------------------------
-    // ‚±‚±‚©‚ç‚Í LexicalHandler ‚Ì‚½‚ß‚Ìƒƒ\ƒbƒhB
+    // ã“ã“ã‹ã‚‰ã¯ LexicalHandler ã®ãŸã‚ã®ãƒ¡ã‚½ãƒƒãƒ‰ã€‚
     // ------------------------------------------------
 
     /**
-     * LexicalHandler ‚Ì DTD ŠJnƒCƒxƒ“ƒgB
+     * LexicalHandler ã® DTD é–‹å§‹ã‚¤ãƒ™ãƒ³ãƒˆã€‚
      * 
      * @param name
      * @param publicId
@@ -338,51 +338,51 @@ public class BlancoXmlUnmarshallerContentHandler implements ContentHandler,
             final String systemId) throws SAXException {
         final BlancoXmlDtd dtd = new BlancoXmlDtd();
 
-        // Œ»İˆ—’†‚ÌƒIƒuƒWƒFƒNƒg‚ğæ“¾‚µ‚Ü‚·B
+        // ç¾åœ¨å‡¦ç†ä¸­ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å–å¾—ã—ã¾ã™ã€‚
         final BlancoXmlNode objCurrent = fDocumentElementStack.peek();
         if (objCurrent instanceof BlancoXmlDocument) {
             ((BlancoXmlDocument) objCurrent).getChildNodes().add(dtd);
         } else {
             throw new IllegalArgumentException(
-                    "BlancoXmlUnmarshallerContentHandler: ‘z’è‚³‚ê‚È‚¢Œ^["
+                    "BlancoXmlUnmarshallerContentHandler: æƒ³å®šã•ã‚Œãªã„å‹["
                             + objCurrent.getClass().getName()
-                            + "]‚É‘Î‚µ‚Ä BlancoXmlDtd‚ğ’Ç‰Á‚µ‚æ‚¤‚Æ‚µ‚Ü‚µ‚½B");
+                            + "]ã«å¯¾ã—ã¦ BlancoXmlDtdã‚’è¿½åŠ ã—ã‚ˆã†ã¨ã—ã¾ã—ãŸã€‚");
         }
     }
 
     /**
-     * LexicalHandler ‚Ì DTD I—¹ƒCƒxƒ“ƒgB
+     * LexicalHandler ã® DTD çµ‚äº†ã‚¤ãƒ™ãƒ³ãƒˆã€‚
      */
     public void endDTD() throws SAXException {
     }
 
     /**
-     * LexicalHandler ‚Ì Entity ŠJnƒCƒxƒ“ƒgB
+     * LexicalHandler ã® Entity é–‹å§‹ã‚¤ãƒ™ãƒ³ãƒˆã€‚
      * 
      * @param name
-     *            ƒGƒ“ƒeƒBƒeƒB–¼B
+     *            ã‚¨ãƒ³ãƒ†ã‚£ãƒ†ã‚£åã€‚
      */
     public void startEntity(final String name) throws SAXException {
-        // Œ»İ‚Ìd—l‚Å‚ÍAƒTƒ|[ƒgŠO‚Å‚·B
+        // ç¾åœ¨ã®ä»•æ§˜ã§ã¯ã€ã‚µãƒãƒ¼ãƒˆå¤–ã§ã™ã€‚
     }
 
     /**
-     * LexicalHandler ‚Ì Entity I—¹ƒCƒxƒ“ƒgB
+     * LexicalHandler ã® Entity çµ‚äº†ã‚¤ãƒ™ãƒ³ãƒˆã€‚
      * 
      * @param name
-     *            ƒGƒ“ƒeƒBƒeƒB–¼B
+     *            ã‚¨ãƒ³ãƒ†ã‚£ãƒ†ã‚£åã€‚
      */
     public void endEntity(final String name) throws SAXException {
-        // Œ»İ‚Ìd—l‚Å‚ÍAƒTƒ|[ƒgŠO‚Å‚·B
+        // ç¾åœ¨ã®ä»•æ§˜ã§ã¯ã€ã‚µãƒãƒ¼ãƒˆå¤–ã§ã™ã€‚
     }
 
     /**
-     * LexicalHandler ‚Ì CDATA ŠJnƒCƒxƒ“ƒgB
+     * LexicalHandler ã® CDATA é–‹å§‹ã‚¤ãƒ™ãƒ³ãƒˆã€‚
      */
     public void startCDATA() throws SAXException {
         final BlancoXmlCdata cdata = new BlancoXmlCdata();
 
-        // Œ»İˆ—’†‚ÌƒIƒuƒWƒFƒNƒg‚ğæ“¾‚µ‚Ü‚·B
+        // ç¾åœ¨å‡¦ç†ä¸­ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å–å¾—ã—ã¾ã™ã€‚
         final BlancoXmlNode objCurrent = fDocumentElementStack.peek();
         if (objCurrent instanceof BlancoXmlElement) {
             final BlancoXmlElement elementParent = ((BlancoXmlElement) objCurrent);
@@ -391,23 +391,23 @@ public class BlancoXmlUnmarshallerContentHandler implements ContentHandler,
             ((BlancoXmlDocument) objCurrent).getChildNodes().add(cdata);
         } else {
             throw new IllegalArgumentException(
-                    "BlancoXmlUnmarshallerContentHandler: ‘z’è‚³‚ê‚È‚¢Œ^["
+                    "BlancoXmlUnmarshallerContentHandler: æƒ³å®šã•ã‚Œãªã„å‹["
                             + objCurrent.getClass().getName()
-                            + "]‚É‘Î‚µ‚Ä CDATA‚ğ’Ç‰Á‚µ‚æ‚¤‚Æ‚µ‚Ü‚µ‚½B");
+                            + "]ã«å¯¾ã—ã¦ CDATAã‚’è¿½åŠ ã—ã‚ˆã†ã¨ã—ã¾ã—ãŸã€‚");
         }
 
         fDocumentElementStack.push(cdata);
     }
 
     /**
-     * LexicalHandler ‚Ì CDATA I—¹ƒCƒxƒ“ƒgB
+     * LexicalHandler ã® CDATA çµ‚äº†ã‚¤ãƒ™ãƒ³ãƒˆã€‚
      */
     public void endCDATA() throws SAXException {
         fDocumentElementStack.pop();
     }
 
     /**
-     * LexicalHandler ‚Ì ƒRƒƒ“ƒgƒCƒxƒ“ƒgB
+     * LexicalHandler ã® ã‚³ãƒ¡ãƒ³ãƒˆã‚¤ãƒ™ãƒ³ãƒˆã€‚
      * 
      * @param ch
      * @param start
@@ -417,7 +417,7 @@ public class BlancoXmlUnmarshallerContentHandler implements ContentHandler,
             throws SAXException {
         final BlancoXmlComment comment = new BlancoXmlComment();
 
-        // Œ»İˆ—’†‚ÌƒIƒuƒWƒFƒNƒg‚ğæ“¾‚µ‚Ü‚·B
+        // ç¾åœ¨å‡¦ç†ä¸­ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚’å–å¾—ã—ã¾ã™ã€‚
         final BlancoXmlNode objCurrent = fDocumentElementStack.peek();
         if (objCurrent instanceof BlancoXmlElement) {
             ((BlancoXmlElement) objCurrent).getChildNodes().add(comment);
@@ -425,26 +425,26 @@ public class BlancoXmlUnmarshallerContentHandler implements ContentHandler,
             ((BlancoXmlDocument) objCurrent).getChildNodes().add(comment);
         } else {
             throw new IllegalArgumentException(
-                    "BlancoXmlUnmarshallerContentHandler: ‘z’è‚³‚ê‚È‚¢Œ^["
+                    "BlancoXmlUnmarshallerContentHandler: æƒ³å®šã•ã‚Œãªã„å‹["
                             + objCurrent.getClass().getName()
-                            + "]‚É‘Î‚µ‚Ä BlancoXmlComment‚ğ’Ç‰Á‚µ‚æ‚¤‚Æ‚µ‚Ü‚µ‚½B");
+                            + "]ã«å¯¾ã—ã¦ BlancoXmlCommentã‚’è¿½åŠ ã—ã‚ˆã†ã¨ã—ã¾ã—ãŸã€‚");
         }
 
         comment.setValue(new String(ch, start, length));
     }
 
     // ------------------------------------------------
-    // ‚±‚±‚©‚ç‚Í DTDHandler ‚Ì‚½‚ß‚Ìƒƒ\ƒbƒhB
+    // ã“ã“ã‹ã‚‰ã¯ DTDHandler ã®ãŸã‚ã®ãƒ¡ã‚½ãƒƒãƒ‰ã€‚
     // ------------------------------------------------
 
     public void notationDecl(final String name, final String publicId,
             final String systemId) throws SAXException {
-        // TODO –¢À‘•B
+        // TODO æœªå®Ÿè£…ã€‚
     }
 
     public void unparsedEntityDecl(final String name, final String publicId,
             final String systemId, final String notationName)
             throws SAXException {
-        // TODO –¢À‘•B
+        // TODO æœªå®Ÿè£…ã€‚
     }
 }

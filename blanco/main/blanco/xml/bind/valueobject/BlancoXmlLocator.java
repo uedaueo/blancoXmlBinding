@@ -1,142 +1,142 @@
 /*
- * ‚±‚Ìƒ\[ƒXƒR[ƒh‚Í blanco Framework‚É‚æ‚è©“®¶¬‚³‚ê‚Ü‚µ‚½B
+ * ã“ã®ã‚½ãƒ¼ã‚¹ã‚³ãƒ¼ãƒ‰ã¯ blanco Frameworkã«ã‚ˆã‚Šè‡ªå‹•ç”Ÿæˆã•ã‚Œã¾ã—ãŸã€‚
  */
 package blanco.xml.bind.valueobject;
 
 /**
- * SAXƒCƒxƒ“ƒg‚Ì‚¤‚¿ Locator‚ğ‹L‰¯‚µ‚Ü‚·B‚±‚ÌƒNƒ‰ƒX‚Í XML/ƒoƒŠƒ…[ƒIƒuƒWƒFƒNƒgƒ}ƒbƒsƒ“ƒO (X/Oƒ}ƒbƒsƒ“ƒO) blancoXmlBinding ‚Ìˆê•”‚Å‚·B
+ * SAXã‚¤ãƒ™ãƒ³ãƒˆã®ã†ã¡ Locatorã‚’è¨˜æ†¶ã—ã¾ã™ã€‚ã“ã®ã‚¯ãƒ©ã‚¹ã¯ XML/ãƒãƒªãƒ¥ãƒ¼ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãƒãƒƒãƒ”ãƒ³ã‚° (X/Oãƒãƒƒãƒ”ãƒ³ã‚°) blancoXmlBinding ã®ä¸€éƒ¨ã§ã™ã€‚
  */
 public class BlancoXmlLocator {
     /**
-     * •¶‘ƒCƒxƒ“ƒg‚ÌŒöŠJ¯•ÊqB
+     * æ–‡æ›¸ã‚¤ãƒ™ãƒ³ãƒˆã®å…¬é–‹è­˜åˆ¥å­ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh: [publicId]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰: [publicId]ã€‚
      */
     private String fPublicId;
 
     /**
-     * •¶‘ƒCƒxƒ“ƒg‚ÌƒVƒXƒeƒ€¯•ÊqB
+     * æ–‡æ›¸ã‚¤ãƒ™ãƒ³ãƒˆã®ã‚·ã‚¹ãƒ†ãƒ è­˜åˆ¥å­ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh: [systemId]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰: [systemId]ã€‚
      */
     private String fSystemId;
 
     /**
-     * •¶‘ƒCƒxƒ“ƒg‚ªI—¹‚·‚és”Ô†B
+     * æ–‡æ›¸ã‚¤ãƒ™ãƒ³ãƒˆãŒçµ‚äº†ã™ã‚‹è¡Œç•ªå·ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh: [lineNumber]B
-     * ƒfƒtƒHƒ‹ƒg: [-1]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰: [lineNumber]ã€‚
+     * ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆ: [-1]ã€‚
      */
     private int fLineNumber = -1;
 
     /**
-     * •¶‘ƒCƒxƒ“ƒg‚ªI—¹‚·‚é—ñ”Ô†B
+     * æ–‡æ›¸ã‚¤ãƒ™ãƒ³ãƒˆãŒçµ‚äº†ã™ã‚‹åˆ—ç•ªå·ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh: [columnNumber]B
-     * ƒfƒtƒHƒ‹ƒg: [-1]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰: [columnNumber]ã€‚
+     * ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆ: [-1]ã€‚
      */
     private int fColumnNumber = -1;
 
     /**
-     * ƒtƒB[ƒ‹ƒh [publicId] ‚Ì’l‚ğİ’è‚µ‚Ü‚·B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ [publicId] ã®å€¤ã‚’è¨­å®šã—ã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh‚Ìà–¾: [•¶‘ƒCƒxƒ“ƒg‚ÌŒöŠJ¯•ÊqB]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®èª¬æ˜: [æ–‡æ›¸ã‚¤ãƒ™ãƒ³ãƒˆã®å…¬é–‹è­˜åˆ¥å­ã€‚]ã€‚
      *
-     * @param argPublicId ƒtƒB[ƒ‹ƒh[publicId]‚Éİ’è‚·‚é’lB
+     * @param argPublicId ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[publicId]ã«è¨­å®šã™ã‚‹å€¤ã€‚
      */
     public void setPublicId(final String argPublicId) {
         fPublicId = argPublicId;
     }
 
     /**
-     * ƒtƒB[ƒ‹ƒh [publicId] ‚Ì’l‚ğæ“¾‚µ‚Ü‚·B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ [publicId] ã®å€¤ã‚’å–å¾—ã—ã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh‚Ìà–¾: [•¶‘ƒCƒxƒ“ƒg‚ÌŒöŠJ¯•ÊqB]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®èª¬æ˜: [æ–‡æ›¸ã‚¤ãƒ™ãƒ³ãƒˆã®å…¬é–‹è­˜åˆ¥å­ã€‚]ã€‚
      *
-     * @return ƒtƒB[ƒ‹ƒh[publicId]‚©‚çæ“¾‚µ‚½’lB
+     * @return ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[publicId]ã‹ã‚‰å–å¾—ã—ãŸå€¤ã€‚
      */
     public String getPublicId() {
         return fPublicId;
     }
 
     /**
-     * ƒtƒB[ƒ‹ƒh [systemId] ‚Ì’l‚ğİ’è‚µ‚Ü‚·B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ [systemId] ã®å€¤ã‚’è¨­å®šã—ã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh‚Ìà–¾: [•¶‘ƒCƒxƒ“ƒg‚ÌƒVƒXƒeƒ€¯•ÊqB]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®èª¬æ˜: [æ–‡æ›¸ã‚¤ãƒ™ãƒ³ãƒˆã®ã‚·ã‚¹ãƒ†ãƒ è­˜åˆ¥å­ã€‚]ã€‚
      *
-     * @param argSystemId ƒtƒB[ƒ‹ƒh[systemId]‚Éİ’è‚·‚é’lB
+     * @param argSystemId ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[systemId]ã«è¨­å®šã™ã‚‹å€¤ã€‚
      */
     public void setSystemId(final String argSystemId) {
         fSystemId = argSystemId;
     }
 
     /**
-     * ƒtƒB[ƒ‹ƒh [systemId] ‚Ì’l‚ğæ“¾‚µ‚Ü‚·B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ [systemId] ã®å€¤ã‚’å–å¾—ã—ã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh‚Ìà–¾: [•¶‘ƒCƒxƒ“ƒg‚ÌƒVƒXƒeƒ€¯•ÊqB]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®èª¬æ˜: [æ–‡æ›¸ã‚¤ãƒ™ãƒ³ãƒˆã®ã‚·ã‚¹ãƒ†ãƒ è­˜åˆ¥å­ã€‚]ã€‚
      *
-     * @return ƒtƒB[ƒ‹ƒh[systemId]‚©‚çæ“¾‚µ‚½’lB
+     * @return ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[systemId]ã‹ã‚‰å–å¾—ã—ãŸå€¤ã€‚
      */
     public String getSystemId() {
         return fSystemId;
     }
 
     /**
-     * ƒtƒB[ƒ‹ƒh [lineNumber] ‚Ì’l‚ğİ’è‚µ‚Ü‚·B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ [lineNumber] ã®å€¤ã‚’è¨­å®šã—ã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh‚Ìà–¾: [•¶‘ƒCƒxƒ“ƒg‚ªI—¹‚·‚és”Ô†B]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®èª¬æ˜: [æ–‡æ›¸ã‚¤ãƒ™ãƒ³ãƒˆãŒçµ‚äº†ã™ã‚‹è¡Œç•ªå·ã€‚]ã€‚
      *
-     * @param argLineNumber ƒtƒB[ƒ‹ƒh[lineNumber]‚Éİ’è‚·‚é’lB
+     * @param argLineNumber ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[lineNumber]ã«è¨­å®šã™ã‚‹å€¤ã€‚
      */
     public void setLineNumber(final int argLineNumber) {
         fLineNumber = argLineNumber;
     }
 
     /**
-     * ƒtƒB[ƒ‹ƒh [lineNumber] ‚Ì’l‚ğæ“¾‚µ‚Ü‚·B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ [lineNumber] ã®å€¤ã‚’å–å¾—ã—ã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh‚Ìà–¾: [•¶‘ƒCƒxƒ“ƒg‚ªI—¹‚·‚és”Ô†B]B
-     * ƒfƒtƒHƒ‹ƒg: [-1]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®èª¬æ˜: [æ–‡æ›¸ã‚¤ãƒ™ãƒ³ãƒˆãŒçµ‚äº†ã™ã‚‹è¡Œç•ªå·ã€‚]ã€‚
+     * ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆ: [-1]ã€‚
      *
-     * @return ƒtƒB[ƒ‹ƒh[lineNumber]‚©‚çæ“¾‚µ‚½’lB
+     * @return ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[lineNumber]ã‹ã‚‰å–å¾—ã—ãŸå€¤ã€‚
      */
     public int getLineNumber() {
         return fLineNumber;
     }
 
     /**
-     * ƒtƒB[ƒ‹ƒh [columnNumber] ‚Ì’l‚ğİ’è‚µ‚Ü‚·B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ [columnNumber] ã®å€¤ã‚’è¨­å®šã—ã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh‚Ìà–¾: [•¶‘ƒCƒxƒ“ƒg‚ªI—¹‚·‚é—ñ”Ô†B]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®èª¬æ˜: [æ–‡æ›¸ã‚¤ãƒ™ãƒ³ãƒˆãŒçµ‚äº†ã™ã‚‹åˆ—ç•ªå·ã€‚]ã€‚
      *
-     * @param argColumnNumber ƒtƒB[ƒ‹ƒh[columnNumber]‚Éİ’è‚·‚é’lB
+     * @param argColumnNumber ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[columnNumber]ã«è¨­å®šã™ã‚‹å€¤ã€‚
      */
     public void setColumnNumber(final int argColumnNumber) {
         fColumnNumber = argColumnNumber;
     }
 
     /**
-     * ƒtƒB[ƒ‹ƒh [columnNumber] ‚Ì’l‚ğæ“¾‚µ‚Ü‚·B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ [columnNumber] ã®å€¤ã‚’å–å¾—ã—ã¾ã™ã€‚
      *
-     * ƒtƒB[ƒ‹ƒh‚Ìà–¾: [•¶‘ƒCƒxƒ“ƒg‚ªI—¹‚·‚é—ñ”Ô†B]B
-     * ƒfƒtƒHƒ‹ƒg: [-1]B
+     * ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰ã®èª¬æ˜: [æ–‡æ›¸ã‚¤ãƒ™ãƒ³ãƒˆãŒçµ‚äº†ã™ã‚‹åˆ—ç•ªå·ã€‚]ã€‚
+     * ãƒ‡ãƒ•ã‚©ãƒ«ãƒˆ: [-1]ã€‚
      *
-     * @return ƒtƒB[ƒ‹ƒh[columnNumber]‚©‚çæ“¾‚µ‚½’lB
+     * @return ãƒ•ã‚£ãƒ¼ãƒ«ãƒ‰[columnNumber]ã‹ã‚‰å–å¾—ã—ãŸå€¤ã€‚
      */
     public int getColumnNumber() {
         return fColumnNumber;
     }
 
     /**
-     * ‚±‚ÌƒoƒŠƒ…[ƒIƒuƒWƒFƒNƒg‚Ì•¶š—ñ•\Œ»‚ğæ“¾‚µ‚Ü‚·B
+     * ã“ã®ãƒãƒªãƒ¥ãƒ¼ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®æ–‡å­—åˆ—è¡¨ç¾ã‚’å–å¾—ã—ã¾ã™ã€‚
      *
-     * <P>g—pã‚Ì’ˆÓ</P>
+     * <P>ä½¿ç”¨ä¸Šã®æ³¨æ„</P>
      * <UL>
-     * <LI>ƒIƒuƒWƒFƒNƒg‚ÌƒVƒƒƒ[”ÍˆÍ‚Ì‚İ•¶š—ñ‰»‚Ìˆ—‘ÎÛ‚Æ‚È‚è‚Ü‚·B
-     * <LI>ƒIƒuƒWƒFƒNƒg‚ªzŠÂQÆ‚µ‚Ä‚¢‚éê‡‚É‚ÍA‚±‚Ìƒƒ\ƒbƒh‚Íg‚í‚È‚¢‚Å‚­‚¾‚³‚¢B
+     * <LI>ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ã‚·ãƒ£ãƒ­ãƒ¼ç¯„å›²ã®ã¿æ–‡å­—åˆ—åŒ–ã®å‡¦ç†å¯¾è±¡ã¨ãªã‚Šã¾ã™ã€‚
+     * <LI>ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãŒå¾ªç’°å‚ç…§ã—ã¦ã„ã‚‹å ´åˆã«ã¯ã€ã“ã®ãƒ¡ã‚½ãƒƒãƒ‰ã¯ä½¿ã‚ãªã„ã§ãã ã•ã„ã€‚
      * </UL>
      *
-     * @return ƒoƒŠƒ…[ƒIƒuƒWƒFƒNƒg‚Ì•¶š—ñ•\Œ»B
+     * @return ãƒãƒªãƒ¥ãƒ¼ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®æ–‡å­—åˆ—è¡¨ç¾ã€‚
      */
     @Override
     public String toString() {

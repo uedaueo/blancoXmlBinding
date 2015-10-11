@@ -37,41 +37,41 @@ import blanco.commons.util.BlancoStringUtil;
 import blanco.xml.bind.valueobject.BlancoXmlDocument;
 
 /**
- * blancoXmlBinding ‚ÌƒoƒŠƒ…[ƒIƒuƒWƒFƒNƒg•\Œ»‚©‚ç XML ‚ğ¶¬‚·‚é‚½‚ß‚ÌƒNƒ‰ƒX‚Å‚·B
+ * blancoXmlBinding ã®ãƒãƒªãƒ¥ãƒ¼ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆè¡¨ç¾ã‹ã‚‰ XML ã‚’ç”Ÿæˆã™ã‚‹ãŸã‚ã®ã‚¯ãƒ©ã‚¹ã§ã™ã€‚
  * 
- * ‚±‚ÌƒNƒ‰ƒX‚Í XML/ƒoƒŠƒ…[ƒIƒuƒWƒFƒNƒgƒ}ƒbƒsƒ“ƒO (X/Oƒ}ƒbƒsƒ“ƒO) blancoXmlBinding ‚Ìˆê•”‚Å‚·B
+ * ã“ã®ã‚¯ãƒ©ã‚¹ã¯ XML/ãƒãƒªãƒ¥ãƒ¼ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆãƒãƒƒãƒ”ãƒ³ã‚° (X/Oãƒãƒƒãƒ”ãƒ³ã‚°) blancoXmlBinding ã®ä¸€éƒ¨ã§ã™ã€‚
  * 
  * @author IGA Tosiki
  */
 public class BlancoXmlMarshaller {
     /**
-     * “à•”“I‚É—˜—p‚·‚éo—Í—pSAXƒnƒ“ƒhƒ‰
+     * å†…éƒ¨çš„ã«åˆ©ç”¨ã™ã‚‹å‡ºåŠ›ç”¨SAXãƒãƒ³ãƒ‰ãƒ©
      * 
-     * ˜AŒ‹æ‚ÌƒXƒgƒŠ[ƒ€‚ÍŠO•”‚Åclose‚È‚Ç‚Ìˆ—‚ªÀ{‚³‚ê‚é•K—v‚ª‚ ‚è‚Ü‚·B
+     * é€£çµå…ˆã®ã‚¹ãƒˆãƒªãƒ¼ãƒ ã¯å¤–éƒ¨ã§closeãªã©ã®å‡¦ç†ãŒå®Ÿæ–½ã•ã‚Œã‚‹å¿…è¦ãŒã‚ã‚Šã¾ã™ã€‚
      */
     private TransformerHandler fSaxHandler;
 
     /**
-     * JavaƒIƒuƒWƒFƒNƒg‚©‚çXML‚ğ¶¬‚µ‚Ü‚·B
+     * Javaã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‹ã‚‰XMLã‚’ç”Ÿæˆã—ã¾ã™ã€‚
      * 
      * @param document
-     *            blancoXml‚Æ‚µ‚Ä‚ÌƒIƒuƒWƒFƒNƒgB
+     *            blancoXmlã¨ã—ã¦ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã€‚
      * @param outFile
-     *            XMLo—Íæƒtƒ@ƒCƒ‹B
+     *            XMLå‡ºåŠ›å…ˆãƒ•ã‚¡ã‚¤ãƒ«ã€‚
      */
     public void marshal(final BlancoXmlDocument document, final File outFile) {
         if (document == null) {
             throw new IllegalArgumentException(
-                    "BlancoXmlMarshaller#marshal: “ü—Í XML ƒhƒLƒ…ƒƒ“ƒg‚É null ‚ª“n‚³‚ê‚Ü‚µ‚½B");
+                    "BlancoXmlMarshaller#marshal: å…¥åŠ› XML ãƒ‰ã‚­ãƒ¥ãƒ¡ãƒ³ãƒˆã« null ãŒæ¸¡ã•ã‚Œã¾ã—ãŸã€‚");
         }
         if (outFile == null) {
             throw new IllegalArgumentException(
-                    "BlancoXmlMarshaller#marshal: o—Íæ XML ƒtƒ@ƒCƒ‹‚É null ‚ª“n‚³‚ê‚Ü‚µ‚½B");
+                    "BlancoXmlMarshaller#marshal: å‡ºåŠ›å…ˆ XML ãƒ•ã‚¡ã‚¤ãƒ«ã« null ãŒæ¸¡ã•ã‚Œã¾ã—ãŸã€‚");
         }
         if (outFile.exists()) {
             if (outFile.canWrite() == false) {
-                throw new IllegalArgumentException("o—Íæ XML ƒtƒ@ƒCƒ‹["
-                        + outFile.getName() + "]‚Í‘‚«‚Ş‚±‚Æ‚ª‚Å‚«‚Ü‚¹‚ñB");
+                throw new IllegalArgumentException("å‡ºåŠ›å…ˆ XML ãƒ•ã‚¡ã‚¤ãƒ«["
+                        + outFile.getName() + "]ã¯æ›¸ãè¾¼ã‚€ã“ã¨ãŒã§ãã¾ã›ã‚“ã€‚");
             }
         }
 
@@ -87,22 +87,22 @@ public class BlancoXmlMarshaller {
             }
         } catch (IOException ex) {
             throw new IllegalArgumentException(
-                    "BlancoXmlMarshaller#marshal: ƒtƒ@ƒCƒ‹o—Í‚É¸”s‚µ‚Ü‚µ‚½B"
+                    "BlancoXmlMarshaller#marshal: ãƒ•ã‚¡ã‚¤ãƒ«å‡ºåŠ›ã«å¤±æ•—ã—ã¾ã—ãŸã€‚"
                             + ex.toString(), ex);
         }
     }
 
     /**
-     * JavaƒIƒuƒWƒFƒNƒg‚©‚çXML‚ğ¶¬‚µ‚Ü‚·B
+     * Javaã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‹ã‚‰XMLã‚’ç”Ÿæˆã—ã¾ã™ã€‚
      * 
-     * Ql:
+     * å‚è€ƒ:
      * http://java.sun.com/webservices/docs/1.6/api/javax/xml/bind/Marshaller
      * .html
      * 
      * @param document
-     *            blancoXml‚Æ‚µ‚Ä‚ÌƒIƒuƒWƒFƒNƒgB
+     *            blancoXmlã¨ã—ã¦ã®ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã€‚
      * @param outStream
-     *            XMLo—ÍæƒXƒgƒŠ[ƒ€B
+     *            XMLå‡ºåŠ›å…ˆã‚¹ãƒˆãƒªãƒ¼ãƒ ã€‚
      */
     public void marshal(final BlancoXmlDocument document,
             final OutputStream outStream) {
@@ -120,7 +120,7 @@ public class BlancoXmlMarshaller {
             }
         } catch (TransformerConfigurationException e) {
             throw new IllegalArgumentException(
-                    "BlancoXmlMarshaller#marshal: ƒgƒ‰ƒ“ƒXƒtƒH[ƒ}[ƒnƒ“ƒhƒ‰¶¬‚É¸”s‚µ‚Ü‚µ‚½B: "
+                    "BlancoXmlMarshaller#marshal: ãƒˆãƒ©ãƒ³ã‚¹ãƒ•ã‚©ãƒ¼ãƒãƒ¼ãƒãƒ³ãƒ‰ãƒ©ç”Ÿæˆã«å¤±æ•—ã—ã¾ã—ãŸã€‚: "
                             + e.toString(), e);
         }
 
@@ -130,11 +130,11 @@ public class BlancoXmlMarshaller {
             new BlancoXmlMarshallerSerializer(fSaxHandler).serialize(document);
         } catch (SAXException e) {
             throw new IllegalArgumentException(
-                    "BlancoXmlMarshaller#marshal: ƒIƒuƒWƒFƒNƒg‚©‚ç XML ‚Ö‚Ì•ÏŠ·‰ß’ö‚Å—áŠO‚ª”­¶‚µ‚Ü‚µ‚½B: "
+                    "BlancoXmlMarshaller#marshal: ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‹ã‚‰ XML ã¸ã®å¤‰æ›éç¨‹ã§ä¾‹å¤–ãŒç™ºç”Ÿã—ã¾ã—ãŸã€‚: "
                             + e.toString(), e);
         }
 
-        // ÅŒã‚Éƒnƒ“ƒhƒ‰‚ğŠJ•ú‚µ‚Ü‚·B
+        // æœ€å¾Œã«ãƒãƒ³ãƒ‰ãƒ©ã‚’é–‹æ”¾ã—ã¾ã™ã€‚
         fSaxHandler = null;
     }
 }
