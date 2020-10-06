@@ -1,6 +1,3 @@
-/*
- * このソースコードは blanco Frameworkにより自動生成されました。
- */
 package blanco.xml.bind.valueobject;
 
 /**
@@ -11,7 +8,7 @@ public class BlancoXmlPrefixMapping {
      * 例: rdf
      *
      * フィールド: [prefix]。
-     * デフォルト: [""]。
+     * デフォルト: [&quot;&quot;]。
      */
     private String fPrefix = "";
 
@@ -37,7 +34,7 @@ public class BlancoXmlPrefixMapping {
      * フィールド [prefix] の値を取得します。
      *
      * フィールドの説明: [例: rdf]。
-     * デフォルト: [""]。
+     * デフォルト: [&quot;&quot;]。
      *
      * @return フィールド[prefix]から取得した値。
      */
@@ -86,5 +83,31 @@ public class BlancoXmlPrefixMapping {
         buf.append(",uri=" + fUri);
         buf.append("]");
         return buf.toString();
+    }
+
+    /**
+     * このバリューオブジェクトを指定のターゲットに複写します。
+     *
+     * <P>使用上の注意</P>
+     * <UL>
+     * <LI>オブジェクトのシャロー範囲のみ複写処理対象となります。
+     * <LI>オブジェクトが循環参照している場合には、このメソッドは使わないでください。
+     * </UL>
+     *
+     * @param target target value object.
+     */
+    public void copyTo(final BlancoXmlPrefixMapping target) {
+        if (target == null) {
+            throw new IllegalArgumentException("Bug: BlancoXmlPrefixMapping#copyTo(target): argument 'target' is null");
+        }
+
+        // No needs to copy parent class.
+
+        // Name: fPrefix
+        // Type: java.lang.String
+        target.fPrefix = this.fPrefix;
+        // Name: fUri
+        // Type: java.lang.String
+        target.fUri = this.fUri;
     }
 }

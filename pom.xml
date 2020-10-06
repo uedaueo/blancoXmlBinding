@@ -5,7 +5,7 @@
 	<groupId>blanco.xml.bind</groupId>
 	<artifactId>blanco-xmlbinding</artifactId>
 	<packaging>jar</packaging>
-	<version>2.1.0</version>
+	<version>2.1.1</version>
 	<name>blanco-xmlbinding</name>
 	<url>https://igapyon.github.io/blancofw-maven2</url>
 

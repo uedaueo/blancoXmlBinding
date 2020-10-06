@@ -1,6 +1,3 @@
-/*
- * このソースコードは blanco Frameworkにより自動生成されました。
- */
 package blanco.xml.bind.valueobject;
 
 /**
@@ -148,5 +145,37 @@ public class BlancoXmlLocator {
         buf.append(",columnNumber=" + fColumnNumber);
         buf.append("]");
         return buf.toString();
+    }
+
+    /**
+     * このバリューオブジェクトを指定のターゲットに複写します。
+     *
+     * <P>使用上の注意</P>
+     * <UL>
+     * <LI>オブジェクトのシャロー範囲のみ複写処理対象となります。
+     * <LI>オブジェクトが循環参照している場合には、このメソッドは使わないでください。
+     * </UL>
+     *
+     * @param target target value object.
+     */
+    public void copyTo(final BlancoXmlLocator target) {
+        if (target == null) {
+            throw new IllegalArgumentException("Bug: BlancoXmlLocator#copyTo(target): argument 'target' is null");
+        }
+
+        // No needs to copy parent class.
+
+        // Name: fPublicId
+        // Type: java.lang.String
+        target.fPublicId = this.fPublicId;
+        // Name: fSystemId
+        // Type: java.lang.String
+        target.fSystemId = this.fSystemId;
+        // Name: fLineNumber
+        // Type: int
+        target.fLineNumber = this.fLineNumber;
+        // Name: fColumnNumber
+        // Type: int
+        target.fColumnNumber = this.fColumnNumber;
     }
 }
